@@ -27,7 +27,10 @@ const JoinFree = () => {
             Trusted by millions of buyers
           </div>
           <p className="content-sub text-xl mt-2 mb-5 text-center max-w-2xl">
-            Customize and source your products on Made-in-China.com, while taking advantage of secure online payment and convenient logistics services to complete your entire purchasing process. The one-stop procurement service will promote your business and increase your profit.
+            Customize and source your products on uraan.com, 
+            while taking advantage of secure online payment and
+             convenient logistics services to complete your entire purchasing process.
+              The one-stop procurement service will promote your business and increase your profit.
           </p>
           <div className="btn-wrap flex justify-center space-x-8">
             {buttons.map((button, index) => (

@@ -238,21 +238,21 @@
 // export default HeroSection
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css' // optional blur effect
-import Banner2 from '../../assets/slideshow-img/slide-2.jpg'
-import Banner1 from '/Uraan Pakistan Web Banner Design.jpg'
+import Banner1 from '../../assets/slideshow-img/slide-1.jpg'
+// import Banner1 from ''
 import { Link } from 'react-router-dom'
 import MainSearch from './MainSearch'
 
 const HeroSection = () => {
     return (
-        <div className="relative h-[100vh] md:h-[81vh] w-full">
+        <div className="relative h-[100vh] w-full">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
                 <LazyLoadImage
                     src={Banner1}
                     alt="Hero Banner"
                     effect="blur"
-                    className="object-cover object-center w-full h-[100vh] md:h-full "
+                    className="object-cover object-center h-[100vh] w-[100vw]"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             </div>

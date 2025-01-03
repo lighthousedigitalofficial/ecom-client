@@ -7,7 +7,7 @@ const FeatureProducts = lazy(() =>
     import('../../components/Product/FeatureProducts')
 )
 const Categories = lazy(() => import('../../components/Categories'))
-const Regions = lazy(() => import('../../components/Regions'))
+// const Regions = lazy(() => import('../../components/Regions'))
 const LatestProducts = lazy(() =>
     import('../../components/Product/LatestProducts')
 )
@@ -32,7 +32,7 @@ import MegaSaleBanner2 from './../../assets/banner/super-sale.webp'
 import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
 import AppPromotion from '../../components/Banners/AppPromotion'
-import BusinessPartners from '../../components/Partners/BusinessPartners'
+// import BusinessPartners from '../../components/Partners/BusinessPartners'
 import JoinFree from '../../components/JoinForFree'
 
 const HomePage = () => {
@@ -54,7 +54,7 @@ const HomePage = () => {
                 <HeroSection />
                 <div className="w-[95vw] px-2 mx-auto">
                     <section>
-                        <Regions />
+                        {/* <Regions /> */}
                         <Categories />
                     </section>
 

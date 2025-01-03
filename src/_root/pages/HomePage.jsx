@@ -33,6 +33,7 @@ import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
 import AppPromotion from '../../components/Banners/AppPromotion'
 import BusinessPartners from '../../components/Partners/BusinessPartners'
+import JoinFree from '../../components/JoinForFree'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -106,6 +107,9 @@ const HomePage = () => {
                     </section>
                     <section>
                         <TradingService />
+                    </section>
+                    <section>
+                        <JoinFree />
                     </section>
                     <section>
                         <ServicesList />

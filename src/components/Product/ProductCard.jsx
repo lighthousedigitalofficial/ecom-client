@@ -132,7 +132,7 @@ const ProductCard = ({ data: product }) => {
         product && (
             <div className="relative max-w-sm rounded-lg border border-gray-200 bg-white ease-in transition-transform hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
                 {/* Product Image Section */}
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-72 w-full overflow-hidden">
                     <Link to={`/products/${product.slug}`}>
                         <img
                             src={productThumbnail}

@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel-container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.carousel-container .react-multi-carousel-arrow {
+    display: none !important;
+}
+
+/* src/styles/scrollbar.css */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #006332;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.953) 63f;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #cbd5e0 transparent; /* Firefox */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+    width: 5px; /* Scrollbar width for Chrome/Safari */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@layer utilities {
+    .carousel-arrow {
+        @apply absolute top-1/2 transform -translate-y-1/2 bg-primary-400 rounded-full p-2 shadow-md z-10;
+    }
+
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .input {
+        @apply border rounded w-full py-3 px-6 text-gray-700 leading-tight focus:outline-1 outline-primary-100;
+        @apply border-gray-300; /* Default border */
+    }
+
+    .input-error {
+        @apply border-red-500 outline-red-500 outline-0; /* Red border when error occurs */
+    }
+
+    .order__price-box {
+        @apply flex justify-between py-4 border-b border-gray-200;
+    }
+
+    .input-label {
+        @apply block text-gray-700 text-sm font-medium mb-2;
+    }
+
+    .btn {
+        @apply py-2 px-4 text-sm cursor-pointer shadow-sm rounded-sm focus:outline-none transition-all duration-300 ease-out lg:px-6 md:text-base lg:text-lg;
+    }
+
+    .primary-btn {
+        @apply bg-primary-500 hover:text-gray-100 hover:bg-primary-400 text-white cursor-pointer;
+    }
+
+    .secondary-btn {
+        @apply bg-gray-100  hover:bg-gray-200 text-gray-800;
+    }
+
+    .products-container {
+        @apply bg-white shadow-sm rounded-lg px-2 py-4 mb-4 shadow-primary-100;
+    }
+
+    .product__quick-view {
+        @apply absolute inset-0 bg-primary-500 bg-opacity-25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    }
+
+    .product__img {
+        @apply w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110;
+    }
+    .navbar-item {
+        @apply text-white hover:text-primary-100 transition-colors cursor-pointer;
+    }
+
+    .view-box {
+        @apply flex justify-end p-3 text-base items-center gap-2 text-primary-400;
+    }
+
+    .discount-badge {
+        @apply absolute top-2 left-2 bg-primary-400 text-white text-sm font-bold px-2 py-1 rounded z-40;
+    }
+
+    .upload_img-btn {
+        @apply flex flex-col items-center justify-center p-2 lg:w-96 md:w-80 w-64 h-48 border-2 border-dashed border-gray-400 rounded-md shadow-sm bg-gray-100 cursor-pointer;
+    }
+}

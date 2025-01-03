@@ -35,10 +35,8 @@ const router = createBrowserRouter([
         path: '',
         element: (
             <>
-                {/* <ErrorBoundary> */}
-                <RootLayout />,
+                <RootLayout />
                 <ScrollToTop />
-                {/* </ErrorBoundary> */}
             </>
         ),
         children: [

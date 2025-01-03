@@ -106,7 +106,8 @@ export const productsApiSlice = apiSlice.injectEndpoints({
             keepUnusedDataFor: 5,
         }),
         getProductSuggestions: builder.query({
-            query: (query) => `${PRODUCTS_URL}/search?q=${query}`,
+            query: (query) =>
+                `${PRODUCTS_URL}/search/suggestions?query=${query}`,
             keepUnusedDataFor: 5,
         }),
         getFlashDeals: builder.query({

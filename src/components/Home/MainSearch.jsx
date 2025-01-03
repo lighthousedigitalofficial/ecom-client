@@ -37,14 +37,8 @@ const MainSearch = () => {
     }
 
     const handleSuggestionClick = (suggestion) => {
-        const type = suggestion.type
-        const typeId =
-            type === 'product' ? suggestion.slug : suggestion._id || '' // Ensure typeId exists in suggestion
-
         if (query) {
-            navigate(
-                `/search?query=${encodeURIComponent(query)}&${type}=${typeId}`
-            )
+            navigate(`/search?query=${encodeURIComponent(query)}`)
             setShowSuggestions(false) // Hide suggestions after navigation
         } else {
             console.error('Invalid suggestion format', suggestion)

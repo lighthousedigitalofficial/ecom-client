@@ -4,7 +4,7 @@ import keys from './../config/keys'
 export const fetchProducts = async (query) => {
     try {
         const response = await axios.get(
-            `${keys.BASE_URL}/api/v1/user/search?query=${query}`
+            `${keys.BASE_URL}/api/v1/user/search/suggestions?query=${query}`
         )
         return response.data
     } catch (error) {

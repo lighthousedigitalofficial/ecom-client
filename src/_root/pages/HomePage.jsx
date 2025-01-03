@@ -74,9 +74,9 @@ const HomePage = () => {
                 <section className="py-4">
                     <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
                         <img
-                            src={MegaSaleBanner1}
-                            alt="Mega Sale 1"
-                            className="lg:w-1/2 w-full rounded-lg"
+                            src={PromoSaleImage}
+                            alt="Promo Sale Banner"
+                            className="rounded-lg"
                             loading="lazy"
                         />
                         <img

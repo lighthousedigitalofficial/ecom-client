@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa'
 import { HiSearch } from 'react-icons/hi'
 import useFetchProducts from './../../hooks/useFetchProducts'
 
-const SearchBar = () => {
+const MainSearch = () => {
     const [query, setQuery] = useState('')
     const [showSuggestions, setShowSuggestions] = useState(false)
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1)
@@ -97,7 +97,8 @@ const SearchBar = () => {
         <div ref={searchBarRef} className="relative mx-1">
             <form onSubmit={handleSearch} className="flex items-center">
                 <input
-                    className="w-full py-2 px-4 rounded-r-none rounded border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
+                    // className="flex items-center bg-white bg-opacity-90 rounded-full shadow-lg p-3"
+                    className="w-full p-3 flex items-center bg-white bg-opacity-90 rounded-full shadow-lg rounded-r-none rounded border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
                     type="search"
                     autoComplete="off"
                     placeholder="Search for items..."
@@ -108,10 +109,10 @@ const SearchBar = () => {
                 />
                 <button
                     type="submit"
-                    className="bg-primary-500 flex items-center gap-2 text-white py-[11px] px-4 outline-none rounded rounded-l-none hidden md:block"
+                    className="bg-primary-500 text-lg text-white  p-3 outline-none rounded-full shadow-lg rounded-l-none hidden md:block"
                 >
-                    <h1>Search</h1>
-                    {/* <HiSearch size={20} /> */}
+                    Search
+                    {/* <HiSearch size={25} /> */}
                 </button>
                 {query && (
                     <button
@@ -168,4 +169,4 @@ const SearchBar = () => {
     )
 }
 
-export default SearchBar
+export default MainSearch

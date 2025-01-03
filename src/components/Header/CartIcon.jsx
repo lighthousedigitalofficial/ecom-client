@@ -90,7 +90,10 @@ const CartIcon = () => {
             className="relative inline-block cursor-pointer"
         >
             {/* Wrap the IconButton with Link */}
-            <IconButton className="rounded-full shadow-md  bg-white hover:bg-gray-100 transition-all duration-300">
+            <IconButton
+                className="rounded-full shadow-md  bg-white hover:bg-gray-100 transition-all duration-300"
+                style={{ backgroundColor: 'white' }}
+            >
                 <Link to="/cart">
                     {totalItems > 0 ? (
                         <Badge badgeContent={totalItems} color="success">

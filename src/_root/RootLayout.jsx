@@ -88,7 +88,7 @@ const RootLayout = () => {
                 </Helmet>
                 <div className="bg-[#f3f5f9]">
                     <Header />
-                    <div className="lg:w-[95%] w-full mx-auto md:px-8 px-4 ">
+                    <div className="lg:w-[100%] w-full mx-auto  ">
                         <Suspense
                             fallback={
                                 <div>

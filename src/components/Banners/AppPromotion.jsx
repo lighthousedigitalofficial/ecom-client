@@ -20,7 +20,7 @@ const AppPromotion = () => {
         <div className="download-btn-wrap flex items-center space-x-6">
           {/* iOS Button */}
           <a
-            href="//www.made-in-china.com/mobile/forbuyerapp-iphone?utm_source=mic&utm_medium=apple_store&utm_campaign=-1"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className="download-btn ios w-64 h-20 rounded-lg bg-cover cursor-pointer flex items-center justify-center"
@@ -31,7 +31,7 @@ const AppPromotion = () => {
 
           {/* Google Play Button */}
           <a
-            href="//www.made-in-china.com/mobile/forbuyerapp-android?referrer=utm_source%3Dmic%26utm_medium%3Dgoogle_play%26utm_campaign%3D-1"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className="download-btn google w-64 h-20 rounded-lg bg-cover cursor-pointer flex items-center justify-center"

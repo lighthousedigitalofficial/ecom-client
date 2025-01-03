@@ -1,50 +1,48 @@
-import { FaApple, FaGooglePlay } from 'react-icons/fa'
-import QRCode from '../../assets/qr.png'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { FaApple, FaGooglePlay } from 'react-icons/fa'; // React icons for Apple and Google Play
 
 const AppPromotion = () => {
-    return (
-        <div className="bg-gray-900 text-white py-10 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
-            {/* Text Content */}
-            <div className="text-center lg:text-left space-y-4">
-                <h1 className="text-3xl lg:text-4xl font-bold">
-                    Go smart sourcing anytime anywhere
-                </h1>
-                <p className="text-lg text-gray-300">Get the app, get ahead</p>
+  return (
+    <div className="content-wrap snipcss-IVCJF max-w-full mx-auto flex flex-col bg-gray-800 w-full items-center justify-center py-8 px-4">
+      {/* Title */}
+      <h2 className="title text-4xl font-bold text-center text-white mb-4">Go smart sourcing anytime anywhere</h2>
+      <div className="sub-title text-2xl font-light text-white mb-8 text-center drop-shadow-lg">Get the app, get ahead</div>
 
-                {/* QR Code */}
-                <div className="mt-4 bg-white p-2 w-fit">
-                    <img
-                        src={QRCode}
-                        alt="QR Code"
-                        className="inline-block w-32 h-32"
-                    />
-                </div>
-            </div>
+      {/* Download Section */}
+      <div className="download flex items-center justify-center space-x-8">
+        {/* QR Code */}
+        <div
+          className="qr-code w-36 h-36 rounded-lg bg-contain bg-no-repeat"
+          style={{ backgroundImage: 'url(https://www.micstatic.com/landing/business/dist/assets/qr-code-9e019717.png)' }}
+        ></div>
 
-            {/* Download Buttons */}
-            <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
-                <Link
-                    to="/"
-                    className="flex items-center space-x-2 bg-black px-8 py-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-300"
-                >
-                    <FaApple className="text-2xl" />
-                    <span className="text-sm font-medium">
-                        Download on the App Store
-                    </span>
-                </Link>
-                <Link
-                    to="/"
-                    className="flex items-center space-x-2 bg-green-500 px-8 py-4 rounded-lg shadow-md hover:bg-green-600 transition duration-300"
-                >
-                    <FaGooglePlay className="text-2xl" />
-                    <span className="text-sm font-medium">
-                        Get it on Google Play
-                    </span>
-                </Link>
-            </div>
+        {/* Download Buttons */}
+        <div className="download-btn-wrap flex items-center space-x-6">
+          {/* iOS Button */}
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="download-btn ios w-64 h-20 rounded-lg bg-cover cursor-pointer flex items-center justify-center"
+            style={{ backgroundImage: 'url(https://www.micstatic.com/landing/business/dist/assets/ios-0d49576a.svg)' }}
+          >
+            {/* <FaApple size={40} className="text-white" /> */}
+          </a>
+
+          {/* Google Play Button */}
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="download-btn google w-64 h-20 rounded-lg bg-cover cursor-pointer flex items-center justify-center"
+            style={{ backgroundImage: 'url(https://www.micstatic.com/landing/business/dist/assets/goole-9db41ad6.svg)' }}
+          >
+            {/* <FaGooglePlay size={40} className="text-white" /> */}
+          </a>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default AppPromotion
+export default AppPromotion;

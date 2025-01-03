@@ -15,7 +15,7 @@ const JoinFree = () => {
       text: "Join free",
       link: "/",
       isMobile: true,
-      bgColor: "bg-red-600",
+      bgColor: "bg-primary-600 ",
     },
   ];
 
@@ -27,14 +27,17 @@ const JoinFree = () => {
             Trusted by millions of buyers
           </div>
           <p className="content-sub text-xl mt-2 mb-5 text-center max-w-2xl">
-            Customize and source your products on Made-in-China.com, while taking advantage of secure online payment and convenient logistics services to complete your entire purchasing process. The one-stop procurement service will promote your business and increase your profit.
+            Customize and source your products on uraan.com, 
+            while taking advantage of secure online payment and
+             convenient logistics services to complete your entire purchasing process.
+              The one-stop procurement service will promote your business and increase your profit.
           </p>
           <div className="btn-wrap flex justify-center space-x-8">
             {buttons.map((button, index) => (
               <a
                 key={index}
                 href={button.link}
-                className={`exploring-btn flex items-center justify-center px-4 py-2 text-lg font-semibold rounded-full ${button.bgColor} border-2 border-white hover:bg-opacity-70`}
+                className={`exploring-btn flex items-center justify-center px-4 py-2 text-lg font-semibold rounded-full ${button.bgColor} border-2 border-primary-400 hover:bg-opacity-70`}
               >
                 {button.text}
                 <FaArrowRight className="ml-2" />

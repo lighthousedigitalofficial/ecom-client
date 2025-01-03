@@ -4,10 +4,10 @@ import BottomNavbar from './BottomNavbar'
 
 const Header = () => {
     return (
-        <div className="py-1 bg-white">
+        <div className="pt-2 bg-primary-500 pb-0">
             {/* <Topbar /> */}
             <NavbarSticky />
-            <BottomNavbar />
+            {/* <BottomNavbar /> */}
         </div>
     )
 }

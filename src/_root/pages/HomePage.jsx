@@ -51,64 +51,66 @@ const HomePage = () => {
         <main>
             <Suspense fallback={<Loader />}>
                 <HeroSection />
-                <section>
-                    <Regions />
-                    <Categories />
-                </section>
+                <div className="w-[95vw] px-2 mx-auto">
+                    <section>
+                        <Regions />
+                        <Categories />
+                    </section>
 
-                <section className="py-2 mb-4">
-                    <ProductRecommendations />
-                </section> 
-                {/* <section className="py-2 mb-4">
+                    <section className="py-2 mb-4">
+                        <ProductRecommendations />
+                    </section>
+                    {/* <section className="py-2 mb-4">
                     <FlashDeal />
                 </section> */}
-                <section className="py-4 mb-4">
-                    <FeatureProducts />
-                </section>
-                <section className="py-4 mb-4">
-                    <img
-                        src={PromoSaleImage}
-                        alt="Promo Sale Banner"
-                        className="rounded-lg"
-                        loading="lazy"
-                    />
-                </section>
-                <TopSeller />
-                <section className="py-4 mb-4 flex flex-col items-center w-full lg:flex-row lg:items-start justify-around gap-4">
-                    <DealOfTheDay />
-                    <LatestProducts />
-                </section>
-                <section className="py-4">
-                    <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
+                    <section className="py-4 mb-4">
+                        <FeatureProducts />
+                    </section>
+                    <section className="py-4 mb-4">
                         <img
                             src={PromoSaleImage}
                             alt="Promo Sale Banner"
                             className="rounded-lg"
                             loading="lazy"
                         />
-                        <img
-                            src={MegaSaleBanner2}
-                            alt="Mega Sale 2"
-                            className="lg:w-1/2 w-full rounded-lg"
-                            loading="lazy"
-                        />
-                    </div>
-                </section>
-                <AppPromotion />
-                {/* <BusinessPartners /> */}
-                <TopProducts />
-                <section>
-                    <Brands />
-                </section>
-                <section className="py-4">
-                    <ProductsCategory />
-                </section>
-                <section>
-                    <TradingService />
-                </section>
-                <section>
-                    <ServicesList />
-                </section>
+                    </section>
+                    <TopSeller />
+                    <section className="py-4 mb-4 flex flex-col items-center w-full lg:flex-row lg:items-start justify-around gap-4">
+                        <DealOfTheDay />
+                        <LatestProducts />
+                    </section>
+                    <section className="py-4">
+                        <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
+                            <img
+                                src={MegaSaleBanner1}
+                                alt="Promo Sale Banner"
+                                className="lg:w-1/2 rounded-lg"
+                                loading="lazy"
+                            />
+                            <img
+                                src={MegaSaleBanner2}
+                                alt="Mega Sale 2"
+                                className="lg:w-1/2 w-full rounded-lg"
+                                loading="lazy"
+                            />
+                        </div>
+                    </section>
+                    <AppPromotion />
+                    {/* <BusinessPartners /> */}
+                    <TopProducts />
+                    <section>
+                        <Brands />
+                    </section>
+                    <section className="py-4">
+                        <ProductsCategory />
+                    </section>
+                    <section>
+                        <TradingService />
+                    </section>
+                    <section>
+                        <ServicesList />
+                    </section>
+                </div>
             </Suspense>
         </main>
     )

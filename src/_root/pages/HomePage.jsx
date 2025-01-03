@@ -28,6 +28,8 @@ const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 import PromoSaleImage from './../../assets/banner/headphone-add.webp'
 import MegaSaleBanner1 from './../../assets/banner/mega-sale.webp'
 import MegaSaleBanner2 from './../../assets/banner/super-sale.webp'
+import ProductRecommendations from '../../components/ProductRecommendations'
+import TradingService from '../../components/TradingServices'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -51,6 +53,10 @@ const HomePage = () => {
                     <Regions />
                     <Categories />
                 </section>
+
+                <section className="py-2 mb-4">
+                    <ProductRecommendations />
+                </section> 
 
                 {/* <section className="py-2 mb-4">
                     <FlashDeal />
@@ -100,6 +106,9 @@ const HomePage = () => {
                 </section>
                 <section className="py-4">
                     <ProductsCategory />
+                </section>
+                <section>
+                    <TradingService />
                 </section>
                 <section>
                     <ServicesList />

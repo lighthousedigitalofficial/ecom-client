@@ -73,7 +73,6 @@ const RootLayout = () => {
     ) : (
         !error && (
             <>
-                {/* Global Helmet for the entire app */}
                 <Helmet>
                     <title>URAAN Pakistan</title>
                     <meta

@@ -7,16 +7,16 @@ const colors = {
     ...defaultColors,
     ...{
         primary: {
-            50: '#e6f7ed',
-            100: '#ccefdc',
-            200: '#99dfb9',
-            300: '#66cf97',
-            400: '#009444', // main color
-            500: '#00843e',
-            600: '#007338',
-            700: '#006332',
-            800: '#00532c',
-            900: '#004326',
+            50: '#e6f1ec',
+            100: '#cce4da',
+            200: '#99c9b6',
+            300: '#66ae92',
+            400: '#1f6e47', // Lighter, closer to main color
+            500: '#0d4121', // Main color
+            600: '#0b3a1e',
+            700: '#09331b', // Slightly less dark
+            800: '#072c17', // Adjusted to maintain smoother gradient
+            900: '#052514', // Less dark for consistency
         },
     },
 }

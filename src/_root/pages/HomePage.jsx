@@ -28,6 +28,8 @@ const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 import PromoSaleImage from './../../assets/banner/headphone-add.webp'
 import MegaSaleBanner1 from './../../assets/banner/mega-sale.webp'
 import MegaSaleBanner2 from './../../assets/banner/super-sale.webp'
+import AppPromotion from '../../components/Banners/AppPromotion'
+import BusinessPartners from '../../components/Partners/BusinessPartners'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -46,65 +48,57 @@ const HomePage = () => {
         <main>
             <Suspense fallback={<Loader />}>
                 <HeroSection />
-                <div className="md:px-8 px-4">
-                    <section>
-                        <Regions />
-                        <Categories />
-                    </section>
-
-                    {/* <section className="py-2 mb-4">
+                <section>
+                    <Regions />
+                    <Categories />
+                </section>
+                {/* <section className="py-2 mb-4">
                     <FlashDeal />
                 </section> */}
-
-                    <section className="py-4 mb-4">
-                        <FeatureProducts />
-                    </section>
-
-                    <section className="py-4 mb-4">
+                <section className="py-4 mb-4">
+                    <FeatureProducts />
+                </section>
+                <section className="py-4 mb-4">
+                    <img
+                        src={PromoSaleImage}
+                        alt="Promo Sale Banner"
+                        className="rounded-lg"
+                        loading="lazy"
+                    />
+                </section>
+                <TopSeller />
+                <section className="py-4 mb-4 flex flex-col items-center w-full lg:flex-row lg:items-start justify-around gap-4">
+                    <DealOfTheDay />
+                    <LatestProducts />
+                </section>
+                <section className="py-4">
+                    <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
                         <img
                             src={PromoSaleImage}
                             alt="Promo Sale Banner"
                             className="rounded-lg"
                             loading="lazy"
                         />
-                    </section>
-
-                    <TopSeller />
-
-                    <section className="py-4 mb-4 flex flex-col items-center w-full lg:flex-row lg:items-start justify-around gap-4">
-                        <DealOfTheDay />
-                        <LatestProducts />
-                    </section>
-
-                    <section className="py-4">
-                        <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
-                            <img
-                                src={MegaSaleBanner1}
-                                alt="Mega Sale 1"
-                                className="lg:w-1/2 w-full rounded-lg"
-                                loading="lazy"
-                            />
-                            <img
-                                src={MegaSaleBanner2}
-                                alt="Mega Sale 2"
-                                className="lg:w-1/2 w-full rounded-lg"
-                                loading="lazy"
-                            />
-                        </div>
-                    </section>
-
-                    <TopProducts />
-
-                    <section>
-                        <Brands />
-                    </section>
-                    <section className="py-4">
-                        <ProductsCategory />
-                    </section>
-                    <section>
-                        <ServicesList />
-                    </section>
-                </div>
+                        <img
+                            src={MegaSaleBanner2}
+                            alt="Mega Sale 2"
+                            className="lg:w-1/2 w-full rounded-lg"
+                            loading="lazy"
+                        />
+                    </div>
+                </section>
+                <AppPromotion />
+                {/* <BusinessPartners /> */}
+                <TopProducts />
+                <section>
+                    <Brands />
+                </section>
+                <section className="py-4">
+                    <ProductsCategory />
+                </section>
+                <section>
+                    <ServicesList />
+                </section>
             </Suspense>
         </main>
     )

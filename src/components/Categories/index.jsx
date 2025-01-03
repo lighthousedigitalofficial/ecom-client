@@ -11,8 +11,10 @@ const Categories = () => {
     return isLoading ? (
         <Loader />
     ) : categories && categories?.doc?.length ? (
-        <div className="bg-white shadow-md shadow-gray-100 p-4">
-            <div className="flex justify-between items-center p-4">
+        <div className="bg-transparent mt-2 shadow-md shadow-gray-100 p-4"
+        style={{boxShadow: '0 0 10px 0 rgba(0,0,0,0.09)'}}
+        >
+            {/* <div className="flex justify-between items-center p-4">
                 <h2 className="text-xl font-bold mb-4 text-gray-900">
                     All Categories
                 </h2>
@@ -22,7 +24,7 @@ const Categories = () => {
                         <FaAngleRight className="text-lg " />
                     </span>
                 </Link>
-            </div>
+            </div> */}
             <CategoryList categories={categories?.doc} />
         </div>
     ) : null

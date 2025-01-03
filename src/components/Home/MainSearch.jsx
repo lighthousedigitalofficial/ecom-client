@@ -156,7 +156,11 @@ const MainSearch = () => {
                                 </li>
                             ))}
                         </ul>
-                    ) : null}
+                    ) : (
+                        <span className="block p-2 font-medium text-base text-gray-900">
+                            Product not found
+                        </span>
+                    )}
                 </div>
             )}
         </div>

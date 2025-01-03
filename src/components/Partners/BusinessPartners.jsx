@@ -1,40 +1,93 @@
-import PartnerSection from './PartnerSection'
+import { FaBuilding, FaIndustry, FaHandshake } from 'react-icons/fa';
 
 const BusinessPartners = () => {
-    const chamberPartners = [
-        {
-            logo: '../../assets/partners/global-chamber-f7ec83c3.png',
-            name: 'Global Chamber',
-        },
-        {
-            logo: '../../assets/partners/chinacham-hungary-f2cbae5e.png',
-            name: 'ACEH',
-        },
-        { logo: '../../assets/partners/chbo-421301d6.png', name: 'NCHK' },
-        { logo: '../../assets/partners/chkd-206324bf.png', name: 'CHKD' },
-        // { logo: '../../assets/partners/', name: 'CIGPL' },
-    ]
+  // Define the data for partners and suppliers
+  const partners = [
+    {
+      imgSrc: "https://www.micstatic.com/landing/business/dist/assets/global-chamber-f7ec83c3.png",
+      name: "Global Chamber"
+    },
+    {
+      imgSrc: "https://www.micstatic.com/landing/business/dist/assets/chinacham-hungary-f2cbae5e.png",
+      name: "ACEH"
+    },
+    {
+      imgSrc: "https://www.micstatic.com/landing/business/dist/assets/dutch-chinese-9b9bbf1f.png",
+      name: "NCHK"
+    },
+    {
+      imgSrc: "https://www.micstatic.com/landing/business/dist/assets/chkd-206324bf.png",
+      name: "CHKD"
+    },
+    {
+      imgSrc: "https://www.micstatic.com/landing/business/dist/assets/chbo-421301d6.png",
+      name: "CIGPL"
+    },
+    {
+        imgSrc: "https://www.micstatic.com/landing/business/dist/assets/dutch-chinese-9b9bbf1f.png",
+        name: "NCHK"
+      },
+  ];
 
-    const brandSuppliers = [
-        { logo: '../../assets/brands/aima.png', name: 'Liri Architecture' },
-        { logo: '../../assets/brands/cnc.png', name: 'Ningbo MH' },
-        { logo: '../../assets/brands/m&g.png', name: 'Quanchai Engine' },
-        { logo: '../../assets/brands/xcmg-1ef82499.png', name: 'XCMG' },
-        { logo: '../../assets/brands/mh.png', name: 'China Faw Group' },
-    ]
+  const suppliers = [
+    {
+      imgSrc: "data:image/png;base64,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", 
+      name: "Liri Architecture"
+    },
+    {
+      imgSrc: "data:image/png;base64,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", 
+      name: "Liri Architecture"
+    },
+    {
+      imgSrc: "data:image/png;base64,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", 
+      name: "Liri Architecture"
+    },
+    {
+      imgSrc: "data:image/png;base64,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", 
+      name: "Liri Architecture"
+    },
+    {
+      imgSrc: "data:image/png;base64,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", 
+      name: "Liri Architecture"
+    },
+   
+    // Add more suppliers here
+  ];
 
-    return (
-        <div className="container mx-auto px-4 py-10">
-            <h1 className="text-3xl font-bold text-gray-900 text-center mb-10">
-                Business Partners
-            </h1>
-            <PartnerSection
-                title="Chamber of Commerce Partners"
-                partners={chamberPartners}
-            />
-            <PartnerSection title="Brand Suppliers" partners={brandSuppliers} />
-        </div>
-    )
-}
+  return (
+    <div className="container mx-auto p-6 mb-6">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-primary-400">Business partners</h2>
+        <h3 className="text-lg font-semibold text-gray-600">Chamber of commerce partners</h3>
+      </div>
+      <div className="container justify-center items-center">
 
-export default BusinessPartners
+   
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 items-center w-full">
+        {partners.map((partner, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <img src={partner.imgSrc} alt={partner.name} className="w-24 h-24 object-contain" />
+            <div className="mt-2 text-gray-700">{partner.name}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-12 mb-6">
+        <h3 className="text-lg font-semibold text-gray-600">Brand suppliers</h3>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+        {suppliers.map((supplier, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <img src={supplier.imgSrc} alt={supplier.name} className="w-24 h-24 object-contain" />
+            <div className="mt-2 text-gray-700">{supplier.name}</div>
+          </div>
+        ))}
+      </div>
+      </div>
+    
+    </div>
+  );
+};
+
+export default BusinessPartners;

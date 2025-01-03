@@ -15,7 +15,7 @@ const JoinFree = () => {
       text: "Join free",
       link: "/",
       isMobile: true,
-      bgColor: "bg-red-600",
+      bgColor: "bg-primary-600 ",
     },
   ];
 
@@ -37,7 +37,7 @@ const JoinFree = () => {
               <a
                 key={index}
                 href={button.link}
-                className={`exploring-btn flex items-center justify-center px-4 py-2 text-lg font-semibold rounded-full ${button.bgColor} border-2 border-white hover:bg-opacity-70`}
+                className={`exploring-btn flex items-center justify-center px-4 py-2 text-lg font-semibold rounded-full ${button.bgColor} border-2 border-primary-400 hover:bg-opacity-70`}
               >
                 {button.text}
                 <FaArrowRight className="ml-2" />

@@ -15,7 +15,8 @@ const CategoryItem = ({ category }) => {
             to={`/products/category/${category.slug}`}
             className="flex-center flex-col gap-2 p-2 group cursor-pointer mt-6"
         >
-            <div className="relative w-30 h-28 overflow-hidden rounded-full border border-gray-300 transition-all duration-300 
+              <div className="relative w-30 h-30 flex items-center justify-center overflow-hidden 
+            rounded-full border border-gray-300 transition-all duration-300 
             ease-out group-hover:border-primary-500 group-hover:shadow-lg">
                 <LazyLoadImage
                     src={categoryLogo}

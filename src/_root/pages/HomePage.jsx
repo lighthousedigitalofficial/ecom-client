@@ -26,7 +26,7 @@ const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
 // images
 import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
-import MegaSaleBanner1 from './../../assets/banner/fruits-banner.jpg'
+import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'
 import MegaSaleBanner2 from './../../assets/banner/Uraan Pakistan Web Banner Design 02.jpg'
 
 import ProductRecommendations from '../../components/ProductRecommendations'

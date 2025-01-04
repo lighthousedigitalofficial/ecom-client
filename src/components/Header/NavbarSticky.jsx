@@ -189,25 +189,23 @@
 
 // export default NavbarSticky
 import { useEffect, useState } from 'react'
-import { Navbar, IconButton } from '@material-tailwind/react'
-import { FaUser, FaSignInAlt, FaUserPlus, FaSearch } from 'react-icons/fa'
+import { Navbar } from '@material-tailwind/react'
+import { FaUser, FaSignInAlt, FaUserPlus } from 'react-icons/fa'
 import { Menu, MenuHandler, MenuList, MenuItem } from '@material-tailwind/react'
 import logo from '../../assets/app-logo/app-logo.png'
 import SearchBar from './SerachBar'
 import { Link } from 'react-router-dom'
 import ProfileMenu from '../Profile/ProfileMenu'
 import CartIcon from './CartIcon'
-import MobileSidebar from './MobileSidebar'
+// import MobileSidebar from './MobileSidebar'
 import useAuth from './../../hooks/useAuth'
-import { Collapse, Typography } from '@material-tailwind/react'
+import { Typography } from '@material-tailwind/react'
 import Loader from '../Loader'
 
-import { FaMobileScreen } from 'react-icons/fa6'
-
+import { MdArrowDropDown } from 'react-icons/md'
 import { useGetCustomerDetailsQuery } from '../../redux/slices/customersApiSlice'
 import WishlistBucket from './WishlistBucket'
-import { BiSolidCategory } from 'react-icons/bi'
-import { MdArrowDropDown } from 'react-icons/md'
+
 import CategoryDropDown from '../Categories/CategoryDropDown'
 
 const NavbarSticky = () => {
@@ -224,7 +222,7 @@ const NavbarSticky = () => {
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY
-        const threshold = window.innerHeight * 0.25
+        const threshold = window.innerHeight * 0.15
         setIsSticky(scrollPosition > threshold)
         setIsSearchVisible(scrollPosition > threshold)
     }
@@ -274,16 +272,17 @@ const NavbarSticky = () => {
         setOpenMenu3(!openMenu3)
     }
 
+    // const [openMenu, setOpenMenu] = useState(false)
+
     const toggleMenu = () => {
         setOpenMenu(!openMenu)
     }
-
     return isUserFetching ? (
         <Loader />
     ) : (
         <div
-            className={`w-full z-40 transition-all border-none bg-primary-500 duration-500 ease-in-out  ${
-                isSticky ? 'fixed top-0 ' : 'relative'
+            className={`w-full z-40 transition-all border-none bg-primary-500 duration-500 ease-in-out ${
+                isSticky ? 'fixed top-0' : 'relative'
             }`}
             style={{
                 transform: isSticky ? 'translateY(0)' : 'translateY(-10%)',
@@ -291,98 +290,103 @@ const NavbarSticky = () => {
         >
             <Navbar
                 variant="gradient"
-                className="mx-auto w-[100%] bg-primary-500 border-none shadow-none p-0 "
+                className="mx-auto w-full bg-primary-500 border-none shadow-none p-0"
             >
-                <div className="flex flex-col md:flex-row  md:items-center items-end justify-end md:justify-between w-[100%] px-4 lg:gap-x-6 gap-x-2 text-white">
-                    <div>
-                        <div className="flex justify-center items-center gap-8">
-                            <Link to="/">
-                                <img
-                                    src={logo}
-                                    alt="brand logo"
-                                    className="w-16 h-16 sm:w-36 md:w-40    object-contain"
-                                />
-                            </Link>
-
-                            {/* Always show Categories */}
-                            <div
-                                className="text-white items-center relative cursor-pointer"
-                                onMouseOver={handleCategoryMouseOver} // Handle hover
-                                onClick={handleCategoryClick} // Handle click
-                                onMouseLeave={handleCategoryMouseLeave}
+                <div className="flex flex-wrap md:flex-nowrap md:items-center items-end justify-between px-4 lg:gap-6 gap-2 text-white">
+                    {/* Logo and Categories */}
+                    <div className="flex items-center gap-6">
+                        <Link to="/">
+                            <img
+                                src={logo}
+                                alt="brand logo"
+                                className="w-12 sm:w-16 md:w-20 object-contain"
+                            />
+                        </Link>
+                        <div
+                            className="relative cursor-pointer"
+                            onMouseOver={handleCategoryMouseOver}
+                            onMouseLeave={handleCategoryMouseLeave}
+                            onClick={handleCategoryClick}
+                        >
+                            <Typography
+                                as="li"
+                                variant="small"
+                                className="text-lg font-medium text-white flex items-center  transition-all"
                             >
-                                <Typography
-                                    as="li"
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="p-2 font-medium"
+                                <span>All Categories</span>
+                                <MdArrowDropDown className="w-5 h-5 ml-1" />
+                            </Typography>
+                            {openMenu3 && (
+                                <div
+                                    className="absolute top-full  z-10 bg-white shadow-lg p-4"
+                                    onMouseLeave={handleCategory2MouseLeave}
                                 >
-                                    <p
-                                        className={`flex items-center hover:text-primary-500 text-primary-400 transition-all duration-300 ease-in justify-between cursor-pointer`}
-                                    >
-                                        {/* <BiSolidCategory className="w-6 h-6 mr-2" /> */}
-                                        <span className="text-lg text-white text-nowrap">
-                                            All categories
-                                        </span>
-                                        <MdArrowDropDown className="w-6 h-6 ml-2 text-white" />
-                                    </p>
-                                </Typography>
-
-                                {/* Conditionally render the CategoryDropDown based on the current path */}
-                                {openMenu3 && (
-                                    <div
-                                        className="Box absolute top-[105%]"
-                                        onMouseLeave={handleCategory2MouseLeave}
-                                        onMouseOver={() => setNavControl(true)}
-                                    >
-                                        <CategoryDropDown />
-                                    </div>
-                                )}
-                            </div>
-                            <div className="text-black text-sm hidden md:flex">
-                                <select
-                                    name="category"
-                                    id=""
-                                    className="px-2 py-1   rounded text-lg bg-transparent text-white outline-none"
-                                >
-                                    <option value="category">
-                                        {' '}
-                                        Buyer Center
-                                    </option>
-                                </select>
-                            </div>
-                            <div className="text-black text-sm hidden md:flex">
-                                <select
-                                    name="category"
-                                    id=""
-                                    className="px-2 py-1 rounded text-lg bg-transparent text-white outline-none"
-                                >
-                                    <option value="category"> Events</option>
-                                </select>
-                            </div>
-                            {/* <div className="text-black text-sm hidden md:flex">
-                                <select
-                                    name="category"
-                                    id=""
-                                    className="px-2 py-1 rounded text-lg bg-transparent text-white outline-none"
-                                >
-                                    <option
-                                        value="category"
-                                        className="px-2 py-1 rounded text-lg bg-transparent text-white outline-none"
-                                    >
-                                        {' '}
-                                        Resources
-                                    </option>
-                                </select>
-                            </div> */}
-                            {isSearchVisible && (
-                                <div className="flex-grow hidden md:block text-center w-full">
-                                    <SearchBar />
+                                    <CategoryDropDown />
                                 </div>
                             )}
                         </div>
+                        <div
+                            className="relative cursor-pointer"
+                            // onMouseOver={handleCategoryMouseOver}
+                            // onMouseLeave={handleCategoryMouseLeave}
+                            // onClick={handleCategoryClick}
+                        >
+                            <Typography
+                                as="li"
+                                variant="small"
+                                className="text-lg font-medium text-white hidden md:flex items-center  transition-all"
+                            >
+                                <span>Buyer Center</span>
+                                <MdArrowDropDown className="w-5 h-5 ml-1" />
+                            </Typography>
+                            {/* {openMenu3 && (
+                                <div
+                                    className="absolute top-full  z-10 bg-white shadow-lg p-4"
+                                    onMouseLeave={handleCategory2MouseLeave}
+                                >
+                                    <CategoryDropDown />
+                                </div>
+                            )} */}
+                        </div>
+
+                        {/* <div className="text-white text-lg ">
+                            <select name="category" id="">
+                                <option value="category"> Events</option>
+                            </select>
+                        </div> */}
+                        <div
+                            className="relative cursor-pointer"
+                            // onMouseOver={handleCategoryMouseOver}
+                            // onMouseLeave={handleCategoryMouseLeave}
+                            // onClick={handleCategoryClick}
+                        >
+                            <Typography
+                                as="li"
+                                variant="small"
+                                className="text-lg font-medium text-white hidden md:flex items-center  transition-all"
+                            >
+                                <span>Events</span>
+                                <MdArrowDropDown className="w-5 h-5 ml-1" />
+                            </Typography>
+                            {/* {openMenu3 && (
+                                <div
+                                    className="absolute top-full  z-10 bg-white shadow-lg p-4"
+                                    onMouseLeave={handleCategory2MouseLeave}
+                                >
+                                    <CategoryDropDown />
+                                </div>
+                            )} */}
+                        </div>
                     </div>
 
+                    {/* Search Bar - Responsive */}
+                    {isSearchVisible && (
+                        <div className="flex-grow text-center w-full md:w-auto">
+                            <SearchBar className="w-full md:w-96 px-2 py-1 rounded bg-white text-black outline-none" />
+                        </div>
+                    )}
+
+                    {/* User Options */}
                     <div className="flex items-center gap-3">
                         <WishlistBucket user={user} />
                         <CartIcon />
@@ -395,34 +399,22 @@ const NavbarSticky = () => {
                             ) : (
                                 <Menu open={openMenu} handler={setOpenMenu}>
                                     <MenuHandler>
-                                        <div
-                                            // variant="text"
-                                            className="bg-gray-100 text-primary-500 flex items-center gap-2 px-3 py-2 rounded-full border-none outline-none"
-                                            onClick={toggleMenu}
-                                        >
-                                            <FaUser className="h-4 w-4 hover:text-white text-primary-500" />
-                                            <h1 className="text-lg">
-                                                Sign in / Join
-                                            </h1>
-                                        </div>
+                                        <button className="flex items-center gap-2 px-3 py-2 rounded-full text-lg font-semibold bg-gray-100 text-primary-500">
+                                            <FaUser className="w-4 h-4" />
+                                            <span>Sign in / Join</span>
+                                        </button>
                                     </MenuHandler>
-                                    <MenuList className="overflow-visible md:grid shadow-md">
-                                        <Link
-                                            to="/customer/auth/sign-in"
-                                            className="outline-none"
-                                        >
-                                            <MenuItem>
-                                                <FaSignInAlt className="inline mr-2" />
+                                    <MenuList className="shadow-lg">
+                                        <Link to="/customer/auth/sign-in">
+                                            <MenuItem className="flex items-center gap-2 text-lg text-primary-500">
+                                                <FaSignInAlt className="" />
                                                 Login
                                             </MenuItem>
                                         </Link>
-                                        <Link
-                                            to="/customer/auth/sign-up"
-                                            className="outline-none"
-                                        >
-                                            <MenuItem>
-                                                <FaUserPlus className="inline mr-2" />
-                                                SignUp
+                                        <Link to="/customer/auth/sign-up">
+                                            <MenuItem className="flex items-center gap-2 text-lg text-primary-500">
+                                                <FaUserPlus className="" />
+                                                Sign Up
                                             </MenuItem>
                                         </Link>
                                     </MenuList>

@@ -21,11 +21,11 @@ import NotFoundPage from './_root/pages/NotFoundPage'
 import ContactUsPage from './_root/pages/VistaMart/ContactUsPage'
 import PrivacyPolicyPage from './_root/pages/VistaMart/PrivacyPolicyPage'
 import FaqPage from './_root/pages/VistaMart/FaqPage'
-import AboutUsPage from './_root/pages/VistaMart/AboutUsPagae'
 import RefundPolicy from './_root/pages/VistaMart/RefundPolicyPage'
 import ReturnPolicy from './_root/pages/VistaMart/ReturnPolicyPage'
 import CancellationPolicy from './_root/pages/VistaMart/CancellationPolicyPage'
 import TermsPage from './_root/pages/VistaMart/TermsPage'
+import AboutUsPage from './_root/pages/VistaMart/AboutUsPage'
 
 // import ErrorBoundary from './components/ErrorBoundary'
 

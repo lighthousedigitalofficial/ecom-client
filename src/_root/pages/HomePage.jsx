@@ -91,7 +91,7 @@ const HomePage = () => {
                                 />
 
                                 {/* Black overlay */}
-                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                                {/* <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div> */}
                             </div>
                             <div className="relative lg:w-1/2">
                                 {/* Image */}
@@ -103,7 +103,7 @@ const HomePage = () => {
                                 />
 
                                 {/* Black overlay */}
-                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                                {/* <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div> */}
                             </div>
                             {/* <img
                                 src={MegaSaleBanner2}
@@ -115,7 +115,7 @@ const HomePage = () => {
                     </section>
                     <AppPromotion />
                     <BusinessPartners />
-                    <TopProducts />
+                    {/* <TopProducts /> */}
                     <section>
                         <Brands />
                     </section>

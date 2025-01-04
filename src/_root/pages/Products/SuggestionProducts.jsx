@@ -19,7 +19,7 @@ const SuggestionProducts = ({ brand }) => {
             {isProductsLoading ? (
                 <Loader />
             ) : products && products.doc?.length ? (
-                <div className="w-full">
+                <div className="mt-4 w-[95vw] mx-auto py-4">
                     <h3 className="text-2xl font-bold mb-4">
                         Similar Products
                     </h3>

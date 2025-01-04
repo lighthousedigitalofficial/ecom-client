@@ -58,7 +58,7 @@ export const ProductsPage = () => {
     return isFetching ? (
         <Loader />
     ) : data ? (
-        <div className="mt-4 w-full mx-auto py-4">
+        <div className="mt-4 w-[95vw] mx-auto py-4">
             <ProductsHeader title="Products" totalItems={data?.totalDocs} />
 
             <div className="flex justify-between items-start gap-4 my-4">

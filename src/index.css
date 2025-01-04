@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Example customizations */
+body {
+    @apply font-sans; /* Apply the default sans font family */
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
 .carousel-container {
     width: 100%;
     padding: 0 20px;

@@ -7,13 +7,18 @@ import { useState } from 'react'
 import img from '../../../assets/no-product-found.png'
 import { TablePagination } from '@mui/material'
 import ProductsHeader from '../../../components/Product/subcomponent/ProductsHeader'
+import { getRegionLabel } from '../../../utils/helpers'
 
-export const DiscountedProductsPage = () => {
+export const RegionProducts = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [currentPage, setCurrentPage] = useState(
         parseInt(searchParams.get('page'), 10) - 1 || 0
     ) // Sync with URL, 0-based index
     const [rowsPerPage, setRowsPerPage] = useState(12)
+
+    const region = searchParams.get('region')
+
+    console.log(region)
 
     // Construct filters from search parameters
     const filters = Array.from(searchParams.entries()).reduce(
@@ -59,11 +64,11 @@ export const DiscountedProductsPage = () => {
     ) : data ? (
         <div className="mt-4 w-[95vw] mx-auto py-4">
             <ProductsHeader
-                title="Discounted Products"
+                title={`${getRegionLabel(region)} Products`}
                 totalItems={data?.totalDocs}
             />
 
-            <div className="flex justify-between items-start gap-4 my-4">
+            <div className="flex justify-between items-start gap-4 my-4 ">
                 <FilterSidebar filters={filters} />
                 {data?.doc?.length ? (
                     <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 transition-all py-2 ease-in duration-300">
@@ -99,4 +104,4 @@ export const DiscountedProductsPage = () => {
     )
 }
 
-export default DiscountedProductsPage
+export default RegionProducts

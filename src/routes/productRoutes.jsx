@@ -7,16 +7,17 @@ import BestSellingProductsPage from '../_root/pages/Products/BestSellingProducts
 import FeaturedProductsPage from '../_root/pages/Products/FeaturedProductsPage'
 import TopRatedProdcutsPage from '../_root/pages/Products/TopRatedProdcutsPage'
 import ProductsPage from '../_root/pages/Products/ProductsPage'
+import RegionProducts from '../_root/pages/Products/RegionProducts'
 
 const productRoutes = [
     {
         path: 'products',
         element: <ProductsPage />,
     },
-    // {
-    //     path: 'region/:slug',
-    //     element: <RegionProductsPage />,
-    // },
+    {
+        path: 'region-products',
+        element: <RegionProducts />,
+    },
     {
         path: 'products/discount',
         element: <DiscountedProductsPage />,

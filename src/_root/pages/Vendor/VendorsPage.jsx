@@ -144,7 +144,7 @@ const VendorsPage = () => {
     }
 
     return (
-        <div>
+        <div className="mt-4 w-[95vw] mx-auto py-4">
             <div className="bg-primary-100 p-4 lg:p-8 rounded-lg flex lg:flex-row flex-col gap-2 justify-between items-center mb-4">
                 <div>
                     <h2 className="text-2xl uppercase font-bold text-primary-400">

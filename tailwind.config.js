@@ -28,7 +28,12 @@ export default withMT({
         './node_modules/react-phone-input-2/lib/style.css',
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'], // Primary font stack
+                serif: ['Georgia', 'serif'], // Optional serif font
+            },
+        },
         colors: colors,
     },
 

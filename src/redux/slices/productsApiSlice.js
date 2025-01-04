@@ -94,7 +94,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         }),
         getLatestProducts: builder.query({
             query: () =>
-                `${PRODUCTS_URL}?sort=-createdAt&status=approved&limit=8`,
+                `${PRODUCTS_URL}?sort=-updatedAt&status=approved&limit=10`,
             keepUnusedDataFor: 5,
         }),
         getFeaturedProducts: builder.query({

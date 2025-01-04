@@ -1,23 +1,20 @@
 import { Link } from 'react-router-dom'
 import img1 from '../../../assets/contact/slide-1.jpg'
+import img2 from '../../../assets/contact/slide-4.jpg'
 const ContactUsPage = () => {
     return (
-        <div className="page flex flex-col lg:flex-row">
+        <div className="page max-w-5xl m-auto flex flex-col lg:flex-row">
             {/* Left Menu */}
-            <div className="left-menu bg-gray-100 ps-10 pt-10 lg:w-1/4">
+            <div className="left-menu bg-[#EEF2F5] ps-10 pt-10 lg:w-1/4">
                 <ul className="space-y-4">
                     <li className="menu-link selected">
-                        <Link
-                            // to="/aboutus/contact"
-                            className="text-primary-500 text-lg font-semibold"
-                        >
+                        <Link className="text-primary-500 text-lg font-semibold">
                             Contact Us
                         </Link>
                     </li>
                     <li className="menu-link">
                         <Link
-                            to={''}
-                            // href="//membercenter.made-in-china.com/tm.do?xcase=foropentmwin"
+                            to=""
                             className="text-gray-700 hover:text-primary-500 text-lg"
                         >
                             Live Chat
@@ -25,8 +22,7 @@ const ContactUsPage = () => {
                     </li>
                     <li className="menu-link">
                         <Link
-                            to={''}
-                            // href="//www.made-in-china.com/help/faq/"
+                            to=""
                             className="text-gray-700 hover:text-primary-500 text-lg"
                         >
                             Frequently Asked Questions
@@ -41,28 +37,27 @@ const ContactUsPage = () => {
                     {/* Image Section */}
                     <div className="item-description-photo mb-6">
                         <img
-                            alt="Welcome to contact Made-in-China.com"
+                            alt="Welcome to contact Uraan Pakistan"
                             src={img1}
                             className="w-full h-40 rounded-md"
                         />
                     </div>
 
                     {/* Contact Methods */}
-                    <div className="contact-ways mb-6">
-                        <ul className="space-y-6">
-                            <li className="contact-way-item">
+                    <div className="contact-ways  mb-6">
+                        <ul className="space-y-6 flex flex-col md:flex-row items-center gap-4">
+                            <li className="contact-way-item pt-0 md:pt-5">
                                 <div className="contact-text font-semibold">
                                     Chat with us online
                                 </div>
-                                <div className="contact-detail-wrap">
-                                    <div className="contact-detail">
-                                        Need Help? Chat with Made-in-China.com.
-                                        <Link
-                                            // href="//membercenter.made-in-china.com/tm.do?xcase=foropentmwin"
-                                            className="btn-main btn-large btn-contact text-white bg-primary-500 hover:bg-primary-400 px-4 py-2 rounded-md ml-2"
-                                        >
-                                            Live Chat
-                                        </Link>
+                                <div className="contact-detail-wrap w-60 p-3  bg-[#F8F8F8]">
+                                    <div className="contact-detail  flex flex-col items-end gap-2">
+                                        Need Help? Chat with Uraan Pakistan.
+                                        <div>
+                                            <Link className=" px-4 py-2 t text-white bg-primary-500 hover:bg-primary-400  rounded-md ml-2">
+                                                Live Chat
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -71,18 +66,18 @@ const ContactUsPage = () => {
                                     New user quick guide
                                 </div>
                                 <div className="contact-detail-wrap">
-                                    <a
-                                        href="//www.made-in-china.com/video/How-to-use-MIC-Website-service-QJxnqnYXdmlE.html"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        // href="https://uraan-pakistan.com/guide"
+                                        // target="_blank"
+                                        // rel="noopener noreferrer"
                                         className="block"
                                     >
                                         <img
-                                            src="https://www.micstatic.com/micen/img/contactUs/videoPlay.jpg"
-                                            alt="video"
-                                            className="w-40 h-40 rounded-md"
+                                            src={img2}
+                                            alt="urran Pakistan"
+                                            className="w-52 h-24 rounded-md object-cover"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </li>
                         </ul>
@@ -91,46 +86,41 @@ const ContactUsPage = () => {
                     {/* Popular Questions */}
                     <div className="item-popular-question mb-6">
                         <div className="item-title font-bold mb-4">
-                            Popular Questions from Other Buyers
+                            Popular Questions from Other Users
                         </div>
                         <div className="questions space-y-3">
                             {[
                                 {
-                                    question:
-                                        'Can Made-in-China.com recommend specific products to me?',
-                                    link: '/faq/detail1u606227454',
+                                    question: 'How can I join Uraan Pakistan?',
+                                    link: '/faq/join-uraan',
+                                },
+                                {
+                                    question: 'What services does Uraan offer?',
+                                    link: '/faq/services',
                                 },
                                 {
                                     question:
-                                        "What should I do if I can't find suitable products?",
-                                    link: '/faq/detail1u606227464',
-                                },
-                                {
-                                    question: 'How can I contact suppliers?',
-                                    link: '/faq/detail1u606227474',
+                                        'How can I contact a representative?',
+                                    link: '/faq/contact-rep',
                                 },
                                 {
                                     question:
-                                        "What's the difference between Gold Member, Diamond Member, Audited Supplier and License Verified?",
-                                    link: '/faq/detail1u606227484',
+                                        'What is Uraan Pakistan’s refund policy?',
+                                    link: '/faq/refund-policy',
                                 },
                                 {
-                                    question:
-                                        'How can I obtain more information about suppliers?',
-                                    link: '/faq/detail1u606227494',
+                                    question: 'How to access premium features?',
+                                    link: '/faq/premium-features',
                                 },
                                 {
-                                    question:
-                                        'How can I reduce trade risks during business?',
-                                    link: '/faq/detail1u606227504',
+                                    question: 'How can I provide feedback?',
+                                    link: '/faq/feedback',
                                 },
                             ].map(({ question, link }, index) => (
                                 <p key={index} className="question">
                                     <Link
-                                        // href={link}
-                                        // target="_blank"
-                                        // rel="noopener noreferrer"
-                                        className="text-primary-500 text-lg hover:underline"
+                                        // to={link}
+                                        className="text-primary-500 text-sm md:text-lg hover:underline"
                                     >
                                         {question}
                                     </Link>
@@ -144,22 +134,25 @@ const ContactUsPage = () => {
                         <div className="item-title font-bold mb-4">
                             Alternate Contacts{' '}
                             <span className="text-sm text-gray-500">
-                                (You can also contact Made-in-China.com directly
-                                via mail or fax.)
+                                (You can also contact Uraan Pakistan directly
+                                via email or phone.)
                             </span>
                         </div>
                         <div className="contactInfo text-gray-700">
                             <p>
-                                <strong>Address:</strong> No. 7, Lijing Road,
-                                Jiangbei New Area, Nanjing, Jiangsu, China
+                                <strong>Address:</strong> Plot 123, Business
+                                Bay, Islamabad, Pakistan
                             </p>
                             <p>
-                                <strong>Post Code:</strong> 210032
+                                <strong>Phone:</strong> +92 (51) 1234 5678
                                 <br />
-                                <strong>Fax Number:</strong> +86(25)6667 0000{' '}
-                                <span className="text-red-500">*</span> Please
-                                leave your email on the fax. We will contact you
-                                via email.
+                                <strong>Email:</strong>{' '}
+                                <a
+                                    href="mailto:contact@uraan-pakistan.com"
+                                    className="text-primary-500 hover:underline"
+                                >
+                                    contact@uraan-pakistan.com
+                                </a>
                             </p>
                         </div>
                     </div>

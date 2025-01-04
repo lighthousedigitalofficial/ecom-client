@@ -24,7 +24,6 @@ const HeroSection = lazy(() => import('./../../components/Home/HeroSection'))
 const Brands = lazy(() => import('../../components/Brands'))
 const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
-
 import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
 import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'
 import MegaSaleBanner2 from './../../assets/banner/Uraan Pakistan Web Banner Design 02.jpg'
@@ -115,7 +114,7 @@ const HomePage = () => {
                         </div>
                     </section>
                     <AppPromotion />
-                    {/* <BusinessPartners /> */}
+                    <BusinessPartners />
                     <TopProducts />
                     <section>
                         <Brands />

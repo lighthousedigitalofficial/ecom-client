@@ -39,7 +39,7 @@ const StickyIcons = () => {
             {showScroll && (
                 <button
                     onClick={scrollTop}
-                    className={`bg-primary-500 text-white p-3 rounded-full shadow-lg hover:bg-primary-600 transition duration-300 ${
+                    className={`bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 ${
                         showScroll ? 'animate-arrow-in' : 'animate-arrow-out'
                     }`}
                     aria-label="Go to Top"

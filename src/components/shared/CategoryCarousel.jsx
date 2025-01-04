@@ -23,7 +23,7 @@ const CategoryCarousel = ({ category, component }) => {
             <div className="flex justify-between items-center mx-2">
                 <div className="flex justify-between items-center w-fit gap-2 mb-4">
                     <h3 className="text-xl font-bold">
-                        {capitalizeFirstLetter(category.name)}
+                        {capitalizeFirstLetter(category.name)} Products
                     </h3>
                 </div>
                 <Link

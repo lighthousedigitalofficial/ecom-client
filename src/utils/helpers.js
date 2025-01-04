@@ -3,6 +3,26 @@ import axios from 'axios'
 import keys from '../config/keys'
 import { parsePhoneNumberFromString } from 'libphonenumber-js'
 
+// Function to get the label from the value
+export const getRegionLabel = (value) => {
+    switch (value) {
+        case 'punjab':
+            return 'Punjab'
+        case 'sindh':
+            return 'Sindh'
+        case 'balochistan':
+            return 'Balochistan'
+        case 'khyberPakhtunkhwa':
+            return 'Khyber Pakhtunkhwa'
+        case 'azadJammoKashmir':
+            return 'Azad Jammo Kashmir'
+        case 'gilgitbaltistan':
+            return 'Gilgit Baltistan'
+        default:
+            return 'Unknown Region'
+    }
+}
+
 // Function to get a pre-signed upload URL
 export const getUploadUrl = async (type, folder) => {
     try {

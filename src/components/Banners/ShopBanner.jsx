@@ -7,7 +7,7 @@ import { FcApproval } from 'react-icons/fc'
 const ShopBanner = ({ vendor }) => {
     return (
         vendor && (
-            <div className="relative h-[50vh] mt-4 p-4 rounded-lg shadow-lg max-w-7xl mx-auto py-4 bg-pink-100">
+            <div className="relative h-[50vh] mt-4 p-4 rounded-lg shadow-lg py-4 bg-pink-100">
                 <img
                     src={
                         vendor.banner

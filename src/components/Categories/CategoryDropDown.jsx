@@ -32,7 +32,7 @@ const CategoryDropDown = () => {
     ) : (
         <div className="relative z-20">
             {categories && categories.doc ? (
-                <div className="w-[250px] p-3 mx-auto shadow-md bg-white">
+                <div className="md:w-[250px] p-3 mx-auto shadow-md bg-white">
                     {categories.doc.slice(0, 7).map((category, index) => {
                         const hasSubCategories =
                             category.subCategories?.length > 0
@@ -61,7 +61,7 @@ const CategoryDropDown = () => {
                                             src={categoryLogo}
                                             effect="blur" // You can use "blur" or "opacity" as lazy load effect
                                             alt={category.name}
-                                            className="h-4 w-4 object-cover rounded-sm"
+                                            className="h-6 w-6 object-cover rounded-full"
                                         />
                                     </div>
                                     <span className="text-gray-700 group-hover:text-primary-600 flex justify-between w-full text-sm  items-center">

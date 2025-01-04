@@ -59,7 +59,7 @@ const ShopViewPage = () => {
     return isLoading || isFetching ? (
         <Loader />
     ) : vendor && vendor?.doc ? (
-        <div>
+        <div className="mt-4 w-[95vw] mx-auto py-4">
             <ShopBanner vendor={vendor?.doc} />
 
             {/* Space between banner and brand header */}

@@ -51,7 +51,7 @@ const vendorSchema = z
 const VendorRegisterPage = () => {
     return (
         <>
-            <div className="p-4">
+            <div className="mt-4 w-[95vw] mx-auto p-4">
                 <div className="flex-grow ">
                     <MultiStepForm vendorSchema={vendorSchema} />
                 </div>

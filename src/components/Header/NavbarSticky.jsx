@@ -129,7 +129,9 @@
 //             )}
 //           </div>
 //         </div>
+// }
 
+// export default NavbarSticky
 //         {isSearchOpen && (
 //           <div className="w-full flex items-center justify-between bg-primary-100 absolute top-full left-0 right-0 shadow-md p-2 transition-transform duration-300 ease-in-out rounded-lg">
 //             <div className="flex-grow">

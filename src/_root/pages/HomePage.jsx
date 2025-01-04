@@ -7,7 +7,7 @@ const FeatureProducts = lazy(() =>
     import('../../components/Product/FeatureProducts')
 )
 const Categories = lazy(() => import('../../components/Categories'))
-// const Regions = lazy(() => import('../../components/Regions'))
+const Regions = lazy(() => import('../../components/Regions'))
 const LatestProducts = lazy(() =>
     import('../../components/Product/LatestProducts')
 )
@@ -24,10 +24,10 @@ const HeroSection = lazy(() => import('./../../components/Home/HeroSection'))
 const Brands = lazy(() => import('../../components/Brands'))
 const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
-// images
-import PromoSaleImage from './../../assets/banner/headphone-add.webp'
-import MegaSaleBanner1 from './../../assets/banner/mega-sale.webp'
-import MegaSaleBanner2 from './../../assets/banner/super-sale.webp'
+
+import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
+import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'
+import MegaSaleBanner2 from './../../assets/banner/Uraan Pakistan Web Banner Design 02.jpg'
 
 import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
@@ -54,7 +54,7 @@ const HomePage = () => {
                 <HeroSection />
                 <div className="w-[95vw] px-2 mx-auto">
                     <section>
-                        {/* <Regions /> */}
+                        <Regions />
                         <Categories />
                     </section>
 
@@ -82,22 +82,40 @@ const HomePage = () => {
                     </section>
                     <section className="py-4">
                         <div className="flex justify-between items-center lg:flex-row flex-col gap-4 w-full">
-                            <img
-                                src={MegaSaleBanner1}
-                                alt="Promo Sale Banner"
-                                className="lg:w-1/2 rounded-lg"
-                                loading="lazy"
-                            />
-                            <img
+                            <div className="relative lg:w-1/2">
+                                {/* Image */}
+                                <img
+                                    src={MegaSaleBanner1}
+                                    alt="Promo Sale Banner"
+                                    className="w-full rounded-lg"
+                                    loading="lazy"
+                                />
+
+                                {/* Black overlay */}
+                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                            </div>
+                            <div className="relative lg:w-1/2">
+                                {/* Image */}
+                                <img
+                                    src={MegaSaleBanner2}
+                                    alt="Promo Sale Banner"
+                                    className="w-full rounded-lg"
+                                    loading="lazy"
+                                />
+
+                                {/* Black overlay */}
+                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                            </div>
+                            {/* <img
                                 src={MegaSaleBanner2}
                                 alt="Mega Sale 2"
                                 className="lg:w-1/2 w-full rounded-lg"
                                 loading="lazy"
-                            />
+                            /> */}
                         </div>
                     </section>
                     <AppPromotion />
-                    <BusinessPartners />
+                    {/* <BusinessPartners /> */}
                     <TopProducts />
                     <section>
                         <Brands />

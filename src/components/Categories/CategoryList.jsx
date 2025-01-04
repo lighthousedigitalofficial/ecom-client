@@ -55,43 +55,40 @@ const CategoryList = ({ categories }) => {
       onMouseLeave={() => setShowArrows(false)}
     >
       <div className="catalog-info p-5">
-       <div className='container mx-auto flex'>
-        
-    
-        <h2 className="catalog-title text-4xl font-bold text-textPrimary max-w-3xl mb-6">
-          Discover a vast array of offerings tailored to your business needs
-        </h2>
-    
-        <div className="catalog-data flex flex-wrap justify-between gap-5">
-          <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-            <div 
-               className="catalog-data-num text-3xl font-extrabold text-primary-700   py-2 rounded-lg"
-               >
-                84 million+</div>
-            <div  className="catalog-data-name text-lg text-gray-700 ">
-                products</div>
-          </div>
-          <div
-              className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-            <div  className="catalog-data-num text-3xl font-extrabold text-primary-700  rounded-lg">6 million+</div>
-            <div  className="catalog-data-name text-lg text-gray-700 ">suppliers</div>
-          </div>
-          <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-            <div               className="catalog-data-num text-3xl font-extrabold text-primary-700   rounded-lg"
+        <div className='container mx-auto flex flex-col md:flex-row items-center justify-between'>
+          <h2 className="catalog-title text-2xl md:text-4xl font-bold text-textPrimary max-w-3xl mb-6  md:text-left">
+            Discover a vast array of offerings tailored to your business needs
+          </h2>
 
-            >
-                4,500+</div>
-            <div  className="catalog-data-name text-lg text-gray-700 ">product categories</div>
+          <div className="catalog-data flex flex-wrap justify-center md:justify-between gap-5">
+            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
+              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 py-2 rounded-lg">
+                84 million+
+              </div>
+              <div className="catalog-data-name text-lg text-gray-700">products</div>
+            </div>
+            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
+              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
+                6 million+
+              </div>
+              <div className="catalog-data-name text-lg text-gray-700">suppliers</div>
+            </div>
+            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
+              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
+                4,500+
+              </div>
+              <div className="catalog-data-name text-lg text-gray-700">product categories</div>
+            </div>
+            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
+              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
+                220+
+              </div>
+              <div className="catalog-data-name text-lg text-gray-700">countries and regions</div>
+            </div>
           </div>
-          <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-            <div                className="catalog-data-num text-3xl font-extrabold text-primary-700  rounded-lg"
-            >
-                220+</div>
-            <div  className="catalog-data-name text-lg text-gray-700 ">countries and regions</div>
-          </div>
-        </div>
         </div>
       </div>
+
       <Carousel
         responsive={responsive}
         infinite={true}

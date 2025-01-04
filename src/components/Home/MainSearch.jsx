@@ -88,36 +88,35 @@ const MainSearch = () => {
     }, [query])
 
     return (
-        <div ref={searchBarRef} className="relative mx-1">
-            <form onSubmit={handleSearch} className="flex items-center">
-                <input
-                    // className="flex items-center bg-white bg-opacity-90 rounded-full shadow-lg p-3"
-                    className="w-full p-3 flex items-center bg-white bg-opacity-90 rounded-full shadow-lg rounded-r-none rounded border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
-                    type="search"
-                    autoComplete="off"
-                    placeholder="Search for items..."
-                    value={query}
-                    onChange={handleInputChange}
-                    onKeyDown={handleKeyDown}
-                    onFocus={() => setShowSuggestions(true)}
-                />
-                <button
-                    type="submit"
-                    className="bg-primary-500 text-lg text-white  p-3 outline-none rounded-full shadow-lg rounded-l-none hidden md:block"
-                >
-                    Search
-                    {/* <HiSearch size={25} /> */}
-                </button>
-                {query && (
-                    <button
-                        type="button"
-                        onClick={handleClearInput}
-                        className="absolute right-2 top-2 md:hidden"
-                    >
-                        <FaTimes />
-                    </button>
-                )}
-            </form>
+        <div ref={searchBarRef} className="relative mx-1 w-full">
+        <form onSubmit={handleSearch} className="flex items-center">
+    <input
+        className="w-full h-12 p-3 flex items-center bg-white bg-opacity-90 rounded-l-full shadow-lg border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
+        type="search"
+        autoComplete="off"
+        placeholder="Search for items..."
+        value={query}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        onFocus={() => setShowSuggestions(true)}
+    />
+    <button
+        type="submit"
+        className="h-12 bg-primary-500 text-lg text-white px-6 rounded-r-full shadow-lg outline-none transition-all ease-in"
+    >
+        Search
+    </button>
+    {query && (
+        <button
+            type="button"
+            onClick={handleClearInput}
+            className="absolute right-2 top-2 md:hidden"
+        >
+            <FaTimes />
+        </button>
+    )}
+</form>
+
 
             {showSuggestions && query && (
                 <div className="absolute top-full mt-1 w-full bg-white border rounded shadow-lg z-10">

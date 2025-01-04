@@ -32,7 +32,7 @@ import MegaSaleBanner2 from './../../assets/banner/super-sale.webp'
 import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
 import AppPromotion from '../../components/Banners/AppPromotion'
-// import BusinessPartners from '../../components/Partners/BusinessPartners'
+import BusinessPartners from '../../components/Partners/BusinessPartners'
 import JoinFree from '../../components/JoinForFree'
 
 const HomePage = () => {

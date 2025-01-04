@@ -18,7 +18,7 @@ const CategoryItem = ({ category }) => {
               <div className="relative w-30 h-30 flex items-center justify-center overflow-hidden 
             rounded-full border border-gray-300 transition-all duration-300 
             ease-out group-hover:border-primary-500 group-hover:shadow-lg">
-                <LazyLoadImage
+                <img
                     src={categoryLogo}
                     effect="blur"
                     alt={category.name}

@@ -57,7 +57,7 @@ const CategoryDropDown = () => {
                                     cursor-pointer w-full hover:bg-gray-100`}
                                 >
                                     <div className="image">
-                                        <LazyLoadImage
+                                        <img
                                             src={categoryLogo}
                                             effect="blur" // You can use "blur" or "opacity" as lazy load effect
                                             alt={category.name}

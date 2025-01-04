@@ -7,7 +7,7 @@ const FeatureProducts = lazy(() =>
     import('../../components/Product/FeatureProducts')
 )
 const Categories = lazy(() => import('../../components/Categories'))
-// const Regions = lazy(() => import('../../components/Regions'))
+const Regions = lazy(() => import('../../components/Regions'))
 const LatestProducts = lazy(() =>
     import('../../components/Product/LatestProducts')
 )
@@ -24,10 +24,10 @@ const HeroSection = lazy(() => import('./../../components/Home/HeroSection'))
 const Brands = lazy(() => import('../../components/Brands'))
 const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
-// images
-import PromoSaleImage from './../../assets/banner/headphone-add.webp'
-import MegaSaleBanner1 from './../../assets/slideshow-img/slide-1.jpg'
-import MegaSaleBanner2 from './../../assets/slideshow-img/slide-2.jpg'
+
+import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
+import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'
+import MegaSaleBanner2 from './../../assets/banner/Uraan Pakistan Web Banner Design 02.jpg'
 
 import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
@@ -54,7 +54,7 @@ const HomePage = () => {
                 <HeroSection />
                 <div className="w-[95vw] px-2 mx-auto">
                     <section>
-                        {/* <Regions /> */}
+                        <Regions />
                         <Categories />
                     </section>
 

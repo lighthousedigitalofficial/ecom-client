@@ -62,7 +62,7 @@ export const BestSellingProductsPage = () => {
         <Loader />
     ) : data ? (
         <>
-            <div className="mt-4 w-full mx-auto py-4">
+            <div className="mt-4 w-[95vw] mx-auto py-4">
                 <ProductsHeader
                     title={'Best Selling Products'}
                     totalItems={totalProducts}

@@ -21,7 +21,7 @@ const SearchResultPage = () => {
                 <Loader />
             ) : data && data.results && data.totalResults > 0 ? (
                 <>
-                    <div>
+                    <div className="mt-4 w-[95vw] mx-auto py-4">
                         <div className="bg-primary-50 p-6 rounded-lg shadow-sm mb-4">
                             <h1 className="text-2xl font-bold text-gray-800 mb-2">
                                 Search Products

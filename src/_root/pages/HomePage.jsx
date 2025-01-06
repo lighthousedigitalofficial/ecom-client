@@ -114,7 +114,7 @@ const HomePage = () => {
                         </div>
                     </section>
                     <AppPromotion />
-                    <BusinessPartners />
+                    {/* <BusinessPartners /> */}
                     {/* <TopProducts /> */}
                     <section>
                         <Brands />

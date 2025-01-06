@@ -36,8 +36,13 @@ const HeroSection = () => {
       />
       <div className="biz-body">
         <div className="biz-banner-content">
-          <h1 className="en-title text-white">SHOP SMART, LIVE BETTER</h1>
-          <h2>Your Ultimate Online Marketplace</h2>
+          {/* <h1 className="en-title text-white">SHOP SMART, LIVE BETTER</h1> */}
+          <h1 className="en-title text-white">Pakistan's <br/> E-commerce Hub</h1>
+
+          <h2>Smart Shopping, Endless Opportunities</h2>
+
+
+
           <div className="biz-banner-entrace">
             <div className="w-full max-w-2xl mb-6 px-4 sm:px-0">
               <MainSearch />

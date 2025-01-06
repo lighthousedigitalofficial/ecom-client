@@ -176,26 +176,26 @@ const NavbarSticky = () => {
     <Loader />
   ) : (
     <div
-      className={`w-full z-40 bg-primary-400 transition-all duration-500 ${
+      className={`w-full z-40 bg-white  text-primary-500  transition-all duration-500 ${
         isSticky ? "fixed top-0 shadow-md" : "relative"
       }`}
     >
-      <Navbar variant="gradient" className="mx-auto border-none bg-primary-400 w-full px-4 py-2 lg:px-6">
+      <Navbar variant="gradient" className="mx-auto border-none bg-white text-primary-500 w-full px-4 py-2 lg:px-6">
         <div className="flex items-center justify-between md:gap-14">
           {/* Logo */}
           <Link to="/">
             <img
               src={logo}
               alt="brand logo"
-              className="w-12 h-12 sm:w-15 sm:h-15 object-contain"
+              className="w-16 h-16 sm:w-15 sm:h-15 object-contain"
             />
           </Link>
 
           {/* Category Dropdown */}
           <div className="hidden md:block relative group">
-            <p className="flex items-center text-white text-sm sm:text-base font-semibold cursor-pointer group relative">
+            <p className="flex items-center  text-sm sm:text-base font-semibold cursor-pointer group relative">
               <span className="font-medium">All Categories</span>
-              <MdArrowDropDown className="text-white w-12 transition-transform duration-300 group-hover:rotate-180 group-hover:translate-y-2 absolute top-full left-1/2 w-50 transform -translate-x-1/2" />
+              <MdArrowDropDown className=" w-12 transition-transform duration-300 group-hover:rotate-180 group-hover:translate-y-2 absolute top-full left-1/2 w-50 transform -translate-x-1/2" />
             </p>
             <div className="absolute rounded-md py-5 z-50 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 animate-slide-down">
               <CategoryDropDown />
@@ -210,7 +210,7 @@ const NavbarSticky = () => {
                         color="blue-gray"
                         className="p-1 font-medium text-base"
                     >
-                        <span className="navbar-item">Brands</span>
+                        <span className="navbar-item text-primary-500">Brands</span>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="hidden w-[250px] overflow-visible md:block shadow-md">
@@ -223,7 +223,7 @@ const NavbarSticky = () => {
                 color="blue-gray"
                 className="p-1 font-medium text-base"
             >
-                <Link to="/products" className="navbar-item">
+                <Link to="/products" className="navbar-item text-primary-500">
                     Products
                 </Link>
             </Typography>

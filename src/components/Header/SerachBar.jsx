@@ -91,7 +91,7 @@ const SearchBar = () => {
         <div ref={searchBarRef} className="relative mx-1">
             <form onSubmit={handleSearch} className="flex items-center">
                 <input
-                    className="w-full py-2 px-4 rounded-r-none rounded border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
+                    className="w-full py-2 px-4 rounded-r-none rounded border border-primary-400 outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
                     type="search"
                     autoComplete="off"
                     placeholder="Search for items..."

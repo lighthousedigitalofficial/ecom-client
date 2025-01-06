@@ -7,9 +7,9 @@ const AboutBanner = () => {
 
   // Array for number items
   const numbers = [
-    { value: "4,300", suffix: "+", label: "Categories" },
-    { value: "6,000,000", suffix: "+", label: "Registered Supplier Members" },
-    { value: "20,000,000", suffix: "+", label: "Registered Buyer Members" },
+    // { value: "4,300", suffix: "+", label: "Categories" },
+    // { value: "6,000,000", suffix: "+", label: "Registered Supplier Members" },
+    // { value: "20,000,000", suffix: "+", label: "Registered Buyer Members" },
   ];
 
   return (

@@ -194,7 +194,7 @@ const NavbarSticky = () => {
           {/* Category Dropdown */}
           <div className="hidden md:block relative group">
             <p className="flex items-center  text-sm sm:text-base font-semibold cursor-pointer group relative">
-              <span className="font-medium">All Categories</span>
+              <span className="font-bold">All Categories</span>
               <MdArrowDropDown className=" w-12 transition-transform duration-300 group-hover:rotate-180 group-hover:translate-y-2 absolute top-full left-1/2 w-50 transform -translate-x-1/2" />
             </p>
             <div className="absolute rounded-md py-5 z-50 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 animate-slide-down">
@@ -202,15 +202,15 @@ const NavbarSticky = () => {
             </div>
           </div>
 
-          <Menu open={openMenu} handler={setOpenMenu} allowHover>
+          <Menu open={openMenu} handler={setOpenMenu} allowHover className="hidden md:block">
                 <MenuHandler>
                     <Typography
                         as="li"
                         variant="paragraph"
                         color="blue-gray"
-                        className="p-1 font-medium text-base"
+                        className="p-1 font-medium text-base hidden md:block"
                     >
-                        <span className="navbar-item hover:text-primary-500 text-primary-500 ">Brands</span>
+                        <span className="navbar-item hover:text-primary-500 text-primary-500 font-bold">Brands</span>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="hidden w-[250px] overflow-visible md:block shadow-md">
@@ -221,9 +221,9 @@ const NavbarSticky = () => {
                 as="li"
                 variant="paragraph"
                 color="blue-gray"
-                className="p-1 font-medium text-base"
+                className="p-1 font-medium text-base hidden md:block"
             >
-                <Link to="/products" className="navbar-item hover:text-primary-500 text-primary-500">
+                <Link to="/products" className="navbar-item  font-bold hover:text-primary-500  text-primary-500">
                     Products
                 </Link>
             </Typography>

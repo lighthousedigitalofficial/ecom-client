@@ -31,9 +31,9 @@ import MegaSaleBanner2 from './../../assets/banner/Uraan Pakistan Web Banner Des
 import ProductRecommendations from '../../components/ProductRecommendations'
 import TradingService from '../../components/TradingServices'
 import AppPromotion from '../../components/Banners/AppPromotion'
-import BusinessPartners from '../../components/Partners/BusinessPartners'
+// import BusinessPartners from '../../components/Partners/BusinessPartners'
 import JoinFree from '../../components/JoinForFree'
-import HeroTabData from '../../components/Home/HeroTabData'
+// import HeroTabData from '../../components/Home/HeroTabData'
 import ProductsCarousel from '../../components/Banners/ProductsBanner'
 
 const HomePage = () => {

@@ -64,7 +64,7 @@ export const CategoryProductsPage = () => {
         <Loader />
     ) : category && category?.doc ? (
         <>
-            <div className="mt-4 w-full mx-auto py-4">
+            <div className="mt-4 w-[95vw] mx-auto py-4">
                 <div className="bg-primary-50 p-6 rounded-lg shadow-sm">
                     <h1 className="text-2xl font-bold text-gray-800 mb-2">
                         Category Products (

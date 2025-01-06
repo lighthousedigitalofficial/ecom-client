@@ -34,6 +34,7 @@ import TradingService from '../../components/TradingServices'
 import AppPromotion from '../../components/Banners/AppPromotion'
 import BusinessPartners from '../../components/Partners/BusinessPartners'
 import JoinFree from '../../components/JoinForFree'
+import HeroTabData from '../../components/Home/HeroTabData'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -52,6 +53,7 @@ const HomePage = () => {
         <main>
             <Suspense fallback={<Loader />}>
                 <HeroSection />
+                {/* <HeroTabData /> */}
                 <div className="w-[95vw] px-2 mx-auto">
                     <section>
                         <Regions />
@@ -92,7 +94,7 @@ const HomePage = () => {
                                 />
 
                                 {/* Black overlay */}
-                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                                {/* <div className="absolute inset-0 bg-black  rounded-lg"></div> */}
                             </div>
                             <div className="relative lg:w-1/2">
                                 {/* Image */}
@@ -104,7 +106,7 @@ const HomePage = () => {
                                 />
 
                                 {/* Black overlay */}
-                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                                {/* <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div> */}
                             </div>
                             {/* <img
                                 src={MegaSaleBanner2}

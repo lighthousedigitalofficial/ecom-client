@@ -100,20 +100,19 @@ const SearchBar = () => {
                     onKeyDown={handleKeyDown}
                     onFocus={() => setShowSuggestions(true)}
                 />
-                <button
+                {/* <button
                     type="submit"
                     className="bg-primary-500 flex items-center gap-2 text-white py-[11px] px-4 outline-none rounded rounded-l-none hidden md:block"
                 >
                     <h1>Search</h1>
-                    {/* <HiSearch size={20} /> */}
-                </button>
+                </button> */}
                 {query && (
                     <button
                         type="button"
                         onClick={handleClearInput}
                         className="absolute right-2 top-2 md:hidden"
                     >
-                        <FaTimes />
+                        {/* <FaTimes /> */}
                     </button>
                 )}
             </form>

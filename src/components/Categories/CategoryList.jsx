@@ -3,6 +3,7 @@ import 'react-multi-carousel/lib/styles.css';
 import CategoryItem from './CategoryItem';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { useState } from 'react';
+import StatsData from './Data';
 
 const CustomLeftArrow = ({ onClick }) => {
   return (
@@ -50,52 +51,31 @@ const CategoryList = ({ categories }) => {
 
   return (
     <div
-      className="w-full relative"
+      className="w-full relative bg-gradient-to-b from-gray-100 to-white py-8"
       onMouseEnter={() => setShowArrows(true)}
       onMouseLeave={() => setShowArrows(false)}
     >
-      <div className="catalog-info p-5">
-        <div className='container mx-auto flex flex-col md:flex-row items-center justify-between'>
-          <h2 className="catalog-title text-2xl md:text-4xl font-bold text-textPrimary max-w-3xl mb-6  md:text-left">
-            Discover a vast array of offerings tailored to your business needs
-          </h2>
+      <div className="catalog-info px-5">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
+          {/* Title Section */}
+          <h2 className="catalog-title text-2xl md:text-4xl font-bold p-6 text-primary-600 max-w-3xl text-center md:text-left">
+          Strengthening Pakistan’s Trade Sector — Unlock Limitless Opportunities for Global Commerce          </h2>
 
-          <div className="catalog-data flex flex-wrap justify-center md:justify-between gap-5">
-            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 py-2 rounded-lg">
-                84 million+
-              </div>
-              <div className="catalog-data-name text-lg text-gray-700">products</div>
-            </div>
-            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
-                6 million+
-              </div>
-              <div className="catalog-data-name text-lg text-gray-700">suppliers</div>
-            </div>
-            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
-                4,500+
-              </div>
-              <div className="catalog-data-name text-lg text-gray-700">product categories</div>
-            </div>
-            <div className="catalog-data-item w-52 h-24 flex flex-col gap-1">
-              <div className="catalog-data-num text-3xl font-extrabold text-primary-700 rounded-lg">
-                220+
-              </div>
-              <div className="catalog-data-name text-lg text-gray-700">countries and regions</div>
-            </div>
+          {/* Stats Section */}
+          <div className="catalog-data flex flex-wrap justify-center md:justify-between gap-5 mt-6 md:mt-0">
+            <StatsData />
           </div>
         </div>
       </div>
 
+      {/* Carousel Section */}
       <Carousel
         responsive={responsive}
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={2000}
+        autoPlaySpeed={3000}
         renderDotsOutside={true}
-        className="relative"
+        className="relative mt-8"
         customLeftArrow={showArrows ? <CustomLeftArrow /> : <div />}
         customRightArrow={showArrows ? <CustomRightArrow /> : <div />}
         arrows={showArrows}
@@ -107,7 +87,7 @@ const CategoryList = ({ categories }) => {
             </div>
           ))
         ) : (
-          <p>Categories not found!</p>
+          <p className="text-center text-gray-500">No categories available at the moment!</p>
         )}
       </Carousel>
     </div>

@@ -75,7 +75,7 @@ const JoinFree = () => {
 
   return (
     <div className="join-free-wrapper bg-gray-800">
-      <div className="content-bg max-w-screen-xl mx-auto h-96 bg-cover bg-[url('https://www.micstatic.com/landing/business/dist/assets/join-free@2x-bab3a17d.png')]">
+      <div className="content-bg max-w-screen-xl mx-auto h-100 bg-cover bg-[url('https://www.micstatic.com/landing/business/dist/assets/join-free@2x-bab3a17d.png')]">
         <div className="content-wrap flex flex-col items-center justify-center px-4 py-10 sm:py-20 text-white">
           <div className="content-title text-3xl sm:text-5xl font-extrabold text-center">
             Trusted by millions of buyers

@@ -1,21 +1,29 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const RegionCard = ({ name, bgColor, slug }) => {
-    return (
-        <Link
-            to={`/region-products?region=${slug}`}
-            className={`relative w-full h-28 flex items-center justify-center cursor-pointer max-w-sm ${bgColor} rounded-lg shadow-md p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-opacity-90`}
-        >
-            {/* Glow effect on hover */}
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-white/10 to-white/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+const RegionCard = ({ name, bgColor, icon: Icon, slug }) => {
+  return (
+    <Link
+      to={`/region-products?region=${slug}`}
+      className={`relative w-full h-32 flex flex-col items-center justify-center cursor-pointer max-w-sm ${bgColor} rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90`}
+      aria-label={`Explore ${name}`}
+    >
+      {/* Glow effect */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-white/20 to-white/10 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
 
-            {/* Animated text */}
-            <h2 className="text-lg font-bold text-white text-center relative">
-                {name}
-            </h2>
-        </Link>
-    )
-}
+      {/* Dynamic Icon */}
+      {Icon && (
+        <div className="mb-3 text-white text-4xl">
+          <Icon />
+        </div>
+      )}
 
-export default RegionCard
+      {/* Animated Text */}
+      <h2 className="text-xl font-bold text-white text-center relative">
+        {name}
+      </h2>
+    </Link>
+  );
+};
+
+export default RegionCard;

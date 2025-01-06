@@ -140,19 +140,20 @@ const ContactUsPage = () => {
                         </div>
                         <div className="contactInfo text-gray-700">
                             <p>
-                                <strong>Address:</strong> Plot 123, Business
-                                Bay, Islamabad, Pakistan
+                                <strong>Address:</strong> C-50, Block #2,
+                                Clifton, Karachi, Pakistan
                             </p>
                             <p>
-                                <strong>Phone:</strong> +92 (51) 1234 5678
+                                <strong>Phone:</strong> (+9221) 35873442,
                                 <br />
                                 <strong>Email:</strong>{' '}
-                                <a
-                                    href="mailto:contact@uraan-pakistan.com"
+                                <Link
+                                    to={''}
+                                    // href="mailto:contact@uraan-pakistan.com"
                                     className="text-primary-500 hover:underline"
                                 >
-                                    contact@uraan-pakistan.com
-                                </a>
+                                    info@uraan.com.pk
+                                </Link>
                             </p>
                         </div>
                     </div>

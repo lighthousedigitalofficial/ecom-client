@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 const stats = [
   {
     id: 1,
-    value: "200M+",
-    label: "products",
+    value: "782,646M+",
+    label: "products price",
     icon: <FaBox />,
     link: "/",
   },
   {
     id: 2,
-    value: "200K+",
+    value: "225,561+",
     label: "suppliers",
     icon: <FaUsers />,
     link: "/",

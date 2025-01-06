@@ -1,150 +1,130 @@
-// import { useEffect, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 // import { Navbar, IconButton } from "@material-tailwind/react";
-// import { FaUser, FaSignInAlt, FaUserPlus, FaSearch } from "react-icons/fa";
+// import { FaSearch, FaSignInAlt, FaUser, FaUserPlus } from "react-icons/fa";
 // import { MdArrowDropDown } from "react-icons/md";
-// import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
 // import logo from "../../assets/app-logo/app-logo.png";
-// import SearchBar from "./SerachBar";
 // import { Link } from "react-router-dom";
 // import ProfileMenu from "../Profile/ProfileMenu";
 // import CartIcon from "./CartIcon";
-// import MobileSidebar from "./MobileSidebar";
 // import WishlistBucket from "./WishlistBucket";
 // import useAuth from "./../../hooks/useAuth";
 // import Loader from "../Loader";
 // import CategoryDropDown from "../Categories/CategoryDropDown";
-// import { FaMobileScreen } from "react-icons/fa6";
+// import "./NavbarSticky.css";
+// import MainSearch from "../Home/MainSearch";
 // import { useGetCustomerDetailsQuery } from "../../redux/slices/customersApiSlice";
+// import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
+// import SearchBar from "./SerachBar";
+// import CategoryDropdownWrapper from "../Categories/CategoryDropdownWrapper";
+
 
 // const NavbarSticky = () => {
-//   const [openMenu, setOpenMenu] = useState(false);
 //   const [isSticky, setIsSticky] = useState(false);
-//   const [isSearchOpen, setIsSearchOpen] = useState(false);
-//   const [openCategoryMenu, setOpenCategoryMenu] = useState(false);
 //   const user = useAuth();
 
 //   const { data: userData, isFetching: isUserFetching } = useGetCustomerDetailsQuery(user?._id, {
 //     skip: !user?._id,
 //   });
 
-//   const handleScroll = () => {
-//     const scrollPosition = window.scrollY;
-//     const threshold = window.innerHeight * 0.25;
-//     setIsSticky(scrollPosition > threshold);
-//   };
-
 //   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
+//     const handleScroll = () => {
+//       setIsSticky(window.scrollY > window.innerHeight * 0.25);
 //     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
 //   }, []);
-
-//   const toggleCategoryMenu = () => {
-//     setOpenCategoryMenu(!openCategoryMenu);
-//   };
 
 //   return isUserFetching ? (
 //     <Loader />
 //   ) : (
 //     <div
-//       className={`w-full z-40 transition-all bg-white duration-500 ease-in-out py-4 ${
-//         isSticky ? "fixed top-0 shadow-lg " : "relative"
+//       className={`w-full z-40 bg-primary-500 transition-all duration-500 ${
+//         isSticky ? "fixed top-0 shadow-md" : "relative"
 //       }`}
-//       style={{
-//         transform: isSticky ? "translateY(0)" : "translateY(-10%)",
-//       }}
 //     >
-//       <Navbar variant="gradient" className="mx-auto w-[100%] p-0 shadow-none">
-//         <div className="flex items-center justify-between lg:gap-x-6 gap-x-2 text-white">
-//           {/* Logo */}
-//           <Link to="/">
+//       <Navbar variant="gradient" className="mx-auto border-none bg-primary-500 w-full px-4 py-2 lg:px-6">
+//         <div className="flex items-center gap-2 md:gap-28 justify-between">
+    
+//            {/* Logo */}
+//            <Link to="/">
 //             <img
 //               src={logo}
 //               alt="brand logo"
-//               className="w-16 h-16 sm:w-36 md:w-40 object-contain"
+//               className="w-12 h-12 sm:w-15 sm:h-15 object-contain"
 //             />
 //           </Link>
 
 //           {/* Category Dropdown */}
-//           <div
-//             className="relative cursor-pointer"
-//             onClick={toggleCategoryMenu}
-//           >
-//             <p className="flex items-center text-black text-lg">
-//               All Categories <MdArrowDropDown className="ml-2 w-5 h-5" />
-//             </p>
-//             {openCategoryMenu && (
-//               <div className="absolute bg-white shadow-md rounded-md p-4 top-full left-0 z-50">
-//                 <CategoryDropDown />
-//               </div>
-//             )}
-//           </div>
+//           <div className="hidden md:block relative group">
+//  <div className="hidden md:block relative group">
+//     <p className="flex items-center text-white text-sm sm:text-base font-semibold cursor-pointer group relative">
+//       <span className="font-medium">All Categories</span>
 
-       
+//       <MdArrowDropDown
+//         className="text-white  w-12  transition-transform duration-300 group-hover:rotate-180 group-hover:translate-y-2 absolute top-full left-1/2  w-50 transform -translate-x-1/2"
+//       />
+//     </p>
+//   </div>
+//   <div 
+//     className="absolute rounded-md  py-5 z-50 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 animate-slide-down"
+//   >
+//     <div className="relative before:content-[''] before:absolute  before:left-6 before:border-[10px] before:border-transparent before:border-b-white">
+//       <CategoryDropDown />
+//     </div>
+//   </div>
+// </div>
 //           {/* Search Bar */}
-//           <div className="flex-grow w-20 hidden md:block">
-//             <SearchBar />
+//           <div className="hidden lg:flex flex-grow  group">
+//             <div
+//               className="w-full transition-all duration-300 ease-in-out group-hover:w-[150%]"
+//             >
+//               <SearchBar    />
+//             </div>
 //           </div>
-//           <div className="md:hidden">
+      
+
+//           <div className="lg:hidden">
 //             <IconButton
 //               variant="text"
-//               className="bg-gray-100 rounded-full border-none"
-//               onClick={() => setIsSearchOpen(!isSearchOpen)}
+//               className="p-2 bg-gray-100 rounded-full"
 //             >
-//               <FaSearch className="h-5 w-5 text-primary-500" />
+//               <FaSearch className="h-5 w-5 text-gray-600" />
 //             </IconButton>
 //           </div>
 
 //           {/* User Options */}
-//           <div className="flex items-center gap-3">
-           
+//           <div className="flex items-center gap-2 sm:gap-3">
 //             <WishlistBucket user={user} />
 //             <CartIcon />
 //             {user && userData?.doc ? (
-//               <ProfileMenu user={userData?.doc} />
+//               <ProfileMenu user={userData?.doc}  />
 //             ) : (
-//               <Menu>
-//                 <MenuHandler>
-//                   <IconButton
-//                     variant="text"
-//                     className="bg-gray-100 rounded-full border-none"
-//                   >
-//                     <FaUser className="h-5 w-5 text-primary-500" />
-//                   </IconButton>
-//                 </MenuHandler>
-//                 <MenuList className="overflow-visible md:grid shadow-md">
-//                   <Link to="/customer/auth/sign-in" className="outline-none">
-//                     <MenuItem>
-//                       <FaSignInAlt className="inline mr-2" /> Login
-//                     </MenuItem>
-//                   </Link>
-//                   <Link to="/customer/auth/sign-up" className="outline-none">
-//                     <MenuItem>
-//                       <FaUserPlus className="inline mr-2" /> Sign Up
-//                     </MenuItem>
-//                   </Link>
-//                 </MenuList>
-//               </Menu>
+                
+//                                   <Menu>
+//                                     <MenuHandler>
+//                                       <IconButton
+//                                         variant="text"
+//                                         className="p-2 bg-gray-100 rounded-full"
+//                                       >
+//                                         <FaUser className="h-5 w-5 text-primary-500 hover:text-white" />
+//                                       </IconButton>
+//                                     </MenuHandler>
+//                                     <MenuList className="shadow-md">
+//                                       <Link to="/customer/auth/sign-in">
+//                                         <MenuItem>
+//                                           <FaSignInAlt className="inline mr-2" /> Login
+//                                         </MenuItem>
+//                                       </Link>
+//                                       <Link to="/customer/auth/sign-up">
+//                                         <MenuItem>
+//                                           <FaUserPlus className="inline mr-2" /> Sign Up
+//                                         </MenuItem>
+//                                       </Link>
+//                                     </MenuList>
+//                                   </Menu>
 //             )}
 //           </div>
 //         </div>
-// }
-
-// export default NavbarSticky
-//         {isSearchOpen && (
-//           <div className="w-full flex items-center justify-between bg-primary-100 absolute top-full left-0 right-0 shadow-md p-2 transition-transform duration-300 ease-in-out rounded-lg">
-//             <div className="flex-grow">
-//               <SearchBar />
-//             </div>
-//             <button
-//               className="p-2 bg-primary-500 text-white rounded-md"
-//               onClick={() => setIsSearchOpen(false)}
-//             >
-//               Search
-//             </button>
-//           </div>
-//         )}
 //       </Navbar>
 //     </div>
 //   );
@@ -154,14 +134,11 @@
 
 
 
-
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Navbar, IconButton } from "@material-tailwind/react";
-import { FaUser, FaSignInAlt, FaUserPlus, FaSearch } from "react-icons/fa";
+import { FaSearch, FaSignInAlt, FaUser, FaUserPlus } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
-import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
 import logo from "../../assets/app-logo/app-logo.png";
-import SearchBar from "./SerachBar";
 import { Link } from "react-router-dom";
 import ProfileMenu from "../Profile/ProfileMenu";
 import CartIcon from "./CartIcon";
@@ -169,124 +146,120 @@ import WishlistBucket from "./WishlistBucket";
 import useAuth from "./../../hooks/useAuth";
 import Loader from "../Loader";
 import CategoryDropDown from "../Categories/CategoryDropDown";
+import SearchBar from "./SerachBar";
+import "./NavbarSticky.css";
 import { useGetCustomerDetailsQuery } from "../../redux/slices/customersApiSlice";
-import './NavbarSticky.css'
-import MainSearch from "../Home/MainSearch";
-const NavbarSticky = () => {
-  const [isSticky, setIsSticky] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const user = useAuth();
+import { Menu, MenuHandler, MenuList, MenuItem, Typography } from "@material-tailwind/react";
+import BrandDropDownItem from '../Brands/BrandDropDownItem'
+import keys from '../../config/keys'
 
+const NavbarSticky = () => {
+    const [openMenu, setOpenMenu] = React.useState(false)
+        const [openMenu2, setOpenMenu2] = React.useState(false)
+    
+  const [isSticky, setIsSticky] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // Toggle search on small screens
+  const user = useAuth();
   const { data: userData, isFetching: isUserFetching } = useGetCustomerDetailsQuery(user?._id, {
     skip: !user?._id,
   });
 
-  const handleScroll = () => {
-    setIsSticky(window.scrollY > window.innerHeight * 0.25);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > window.innerHeight * 0.25);
+    };
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [openCategoryMenu, setOpenCategoryMenu] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const toggleCategoryMenu = () => {
-    setOpenCategoryMenu((prev) => !prev);
-  };
-
-  const closeMenu = () => {
-    setOpenCategoryMenu(false);
-  };
-
-  // Close the dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        closeMenu();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  // Handle keyboard navigation
-  const handleKeyDown = (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  };
 
   return isUserFetching ? (
     <Loader />
   ) : (
     <div
-      className={`w-full z-40 bg-primary-500 transition-all duration-500 ${
+      className={`w-full z-40 bg-white  text-primary-500  transition-all duration-500 ${
         isSticky ? "fixed top-0 shadow-md" : "relative"
       }`}
     >
-      <Navbar variant="gradient" className="mx-auto border-none bg-primary-500 w-full px-4 py-2 lg:px-6">
-        <div className="flex items-center justify-between">
+      <Navbar variant="gradient" className="mx-auto border-none bg-white text-primary-500 w-full px-4 py-2 lg:px-6">
+        <div className="flex items-center justify-between md:gap-14">
           {/* Logo */}
           <Link to="/">
             <img
               src={logo}
               alt="brand logo"
-              className="w-12 h-12 sm:w-15 sm:h-15 object-contain"
+              className="w-16 h-16 sm:w-15 sm:h-15 object-contain"
             />
           </Link>
-        <div       
-         className="flex items-center gap-6 sm:gap-6"
- >
-     <div
-  className="hidden md:block relative group"
-  ref={dropdownRef}
->
-  {/* Trigger */}
-  <p
-    className="flex items-center text-white  text-sm sm:text-base cursor-pointer"
-    tabIndex={0} // Make it focusable
-  >
-    <span className="font-medium">All Categories</span>
-    <MdArrowDropDown
-      className="ml-2  text-white transition-transform bg-none duration-300 group-hover:rotate-180"
-    />
-  </p>
 
-  {/* Dropdown Menu */}
-  <div
-    className="absolute  shadow-lg rounded-md mt-2 p-4 z-50 w-48 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-300"
-  >
-    <CategoryDropDown />
-  </div>
-</div>
-
-
-          {/* Search Bar */}
-          <div className="hidden lg:flex flex-grow mx-4">
-            <MainSearch />
-          </div>
-            
+          {/* Category Dropdown */}
+          <div className="hidden md:block relative group">
+            <p className="flex items-center  text-sm sm:text-base font-semibold cursor-pointer group relative">
+              <span className="font-medium">All Categories</span>
+              <MdArrowDropDown className=" w-12 transition-transform duration-300 group-hover:rotate-180 group-hover:translate-y-2 absolute top-full left-1/2 w-50 transform -translate-x-1/2" />
+            </p>
+            <div className="absolute rounded-md py-5 z-50 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 animate-slide-down">
+              <CategoryDropDown />
             </div>
+          </div>
 
-        
+          <Menu open={openMenu} handler={setOpenMenu} allowHover>
+                <MenuHandler>
+                    <Typography
+                        as="li"
+                        variant="paragraph"
+                        color="blue-gray"
+                        className="p-1 font-medium text-base"
+                    >
+                        <span className="navbar-item text-primary-500">Brands</span>
+                    </Typography>
+                </MenuHandler>
+                <MenuList className="hidden w-[250px] overflow-visible md:block shadow-md">
+                    <BrandDropDownItem />
+                </MenuList>
+            </Menu>
+            <Typography
+                as="li"
+                variant="paragraph"
+                color="blue-gray"
+                className="p-1 font-medium text-base"
+            >
+                <Link to="/products" className="navbar-item text-primary-500">
+                    Products
+                </Link>
+            </Typography>
+           
+          {/* Search Bar */}
+          <div className="hidden lg:flex flex-grow justify-center mx-4 group">
+            <div className="w-full transition-all duration-300 ease-in-out group-hover:w-[150%]">
+              <SearchBar />
+            </div>
+          </div>
 
+          {/* Search Icon for Mobile */}
           <div className="lg:hidden">
             <IconButton
               variant="text"
               className="p-2 bg-gray-100 rounded-full"
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              onClick={() => setIsSearchOpen(!isSearchOpen)} // Toggle search
             >
               <FaSearch className="h-5 w-5 text-gray-600" />
             </IconButton>
           </div>
+
+          {/* Mobile Search */}
+          {isSearchOpen && (
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-gray-100 p-2 shadow-md">
+              <div className="w-full">
+                <SearchBar />
+              </div>
+              <button
+                className="p-2 bg-primary-500 text-white rounded-md w-full  inline-block mt-2" 
+                onClick={() => setIsSearchOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+          )}
 
           {/* User Options */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -297,11 +270,8 @@ const NavbarSticky = () => {
             ) : (
               <Menu>
                 <MenuHandler>
-                  <IconButton
-                    variant="text"
-                    className="p-2 bg-gray-100 rounded-full"
-                  >
-                    <FaUser className="h-5 w-5 text-gray-600" />
+                  <IconButton variant="text" className="p-2 bg-gray-100 rounded-full">
+                    <FaUser className="h-5 w-5 text-primary-500 hover:text-white" />
                   </IconButton>
                 </MenuHandler>
                 <MenuList className="shadow-md">
@@ -320,24 +290,10 @@ const NavbarSticky = () => {
             )}
           </div>
         </div>
-
-        {/* Mobile Search */}
-        {isSearchOpen && (
-          <div className="flex items-center justify-between bg-gray-100 p-2 absolute top-full left-0 right-0 shadow-md">
-            <div className="flex-grow">
-              <SearchBar />
-            </div>
-            <button
-              className="p-2 bg-primary-500 text-white rounded-md"
-              onClick={() => setIsSearchOpen(false)}
-            >
-              Search
-            </button>
-          </div>
-        )}
       </Navbar>
     </div>
   );
 };
 
 export default NavbarSticky;
+

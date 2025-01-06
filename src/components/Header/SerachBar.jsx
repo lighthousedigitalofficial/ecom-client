@@ -91,7 +91,7 @@ const SearchBar = () => {
         <div ref={searchBarRef} className="relative mx-1">
             <form onSubmit={handleSearch} className="flex items-center">
                 <input
-                    className="w-full py-2 px-4 rounded-r-none rounded border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
+                    className="w-full py-2 px-4 rounded-r-none rounded border border-primary-400 outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
                     type="search"
                     autoComplete="off"
                     placeholder="Search for items..."
@@ -100,20 +100,19 @@ const SearchBar = () => {
                     onKeyDown={handleKeyDown}
                     onFocus={() => setShowSuggestions(true)}
                 />
-                <button
+                {/* <button
                     type="submit"
                     className="bg-primary-500 flex items-center gap-2 text-white py-[11px] px-4 outline-none rounded rounded-l-none hidden md:block"
                 >
                     <h1>Search</h1>
-                    {/* <HiSearch size={20} /> */}
-                </button>
+                </button> */}
                 {query && (
                     <button
                         type="button"
                         onClick={handleClearInput}
                         className="absolute right-2 top-2 md:hidden"
                     >
-                        <FaTimes />
+                        {/* <FaTimes /> */}
                     </button>
                 )}
             </form>

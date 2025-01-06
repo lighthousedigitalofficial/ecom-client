@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="biz-body">
         <div className="biz-banner-content">
           {/* <h1 className="en-title text-white">SHOP SMART, LIVE BETTER</h1> */}
-          <h1 className="en-title text-white">Pakistan's <br/> E-commerce Hub</h1>
+          <h1 className="en-title text-white md:text-[5rem] text-[2rem]">Pakistan's <br/> E-commerce Hub</h1>
 
           <h2>Smart Shopping, Endless Opportunities</h2>
 

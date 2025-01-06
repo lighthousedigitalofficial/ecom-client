@@ -210,7 +210,7 @@ const NavbarSticky = () => {
                         color="blue-gray"
                         className="p-1 font-medium text-base"
                     >
-                        <span className="navbar-item text-primary-500">Brands</span>
+                        <span className="navbar-item hover:text-primary-500 text-primary-500 ">Brands</span>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="hidden w-[250px] overflow-visible md:block shadow-md">
@@ -223,7 +223,7 @@ const NavbarSticky = () => {
                 color="blue-gray"
                 className="p-1 font-medium text-base"
             >
-                <Link to="/products" className="navbar-item text-primary-500">
+                <Link to="/products" className="navbar-item hover:text-primary-500 text-primary-500">
                     Products
                 </Link>
             </Typography>

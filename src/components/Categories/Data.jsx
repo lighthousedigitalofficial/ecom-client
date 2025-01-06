@@ -8,28 +8,28 @@ const stats = [
     value: "200M+",
     label: "products",
     icon: <FaBox />,
-    link: "/products",
+    link: "/",
   },
   {
     id: 2,
     value: "200K+",
     label: "suppliers",
     icon: <FaUsers />,
-    link: "/suppliers",
+    link: "/",
   },
   {
     id: 3,
     value: "5,900",
     label: "product categories",
     icon: <FaListUl />,
-    link: "/categories",
+    link: "/",
   },
   {
     id: 4,
     value: "200+",
     label: "countries and regions",
     icon: <FaGlobe />,
-    link: "/regions",
+    link: "/",
   },
 ];
 

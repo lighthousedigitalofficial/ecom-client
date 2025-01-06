@@ -1,557 +1,571 @@
-@media all{ 
-
-  .biz-banner { 
-    padding-top: 2.2rem; 
-    width: 100%; 
-    height: 80vh !important; 
-    -webkit-box-sizing: content-box; 
-    box-sizing: content-box; 
-    background-repeat: no-repeat; 
-    background-position: center 2.2rem; 
-    background-size: auto calc(100% - 2.2rem); 
-    background-color: #24221e; 
-    position: relative; 
-    z-index: 1;
-    
-  } 
-}     
-
-
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner { 
-    padding-top: 72px; 
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box; 
-    background-position: center top; 
-    background-size: auto 100%; 
-  
-  } 
-}     
-
-@media only screen and (min-width: 1280px){ 
-  
-}     
-
-@media only screen and (min-width: 1366px){ 
-  
-}     
-
-@media only screen and (min-width: 1440px){ 
-
-  
-}     
-
-@media all{ 
-  img { 
-    border: 0;
-  } 
-
-  .biz-banner .biz-banner-img  { 
-    width: 100%; 
-    height: 100%; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    -o-object-fit: cover; 
-    object-fit: fill; 
-    z-index: -1;
-  } 
-}     
-
-@media only screen and (min-width: 1440px){ 
-  .biz-body { 
-    margin: 0 auto; 
-    width: 100%; 
-    max-width: 1440px; 
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box;
-  } 
-}     
-
-@media all{ 
-  .biz-banner-content { 
-    padding: 40px 40px 38px;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-content { 
-    padding: 40px 20px 0;
-  } 
-}     
-
-@media only screen and (min-width: 1280px){ 
-  .biz-banner-content { 
-    padding: 40px 90px 0;
-  } 
-}     
-
-@media only screen and (min-width: 1366px){ 
-  .biz-banner-content { 
-    padding: 60px 53px 0;
-  } 
-}     
-
-@media only screen and (min-width: 1440px){ 
-  .biz-banner-content { 
-    padding: 60px 90px 0;
-  } 
-}     
-
-@media all{ 
- 
-
- 
-
-  .biz-banner h1  { 
-    margin: 0; 
-    /* font-size: 60px;  */
-    line-height: 1.2; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    letter-spacing: .02em;
-  } 
-}     
-
-  
-
-@media all{ 
-  h2 { 
-    font-size: 100%; 
-    font-weight: bold; 
-    margin: 0;
-  } 
-
-  .biz-banner h2  { 
-    color: #fff;
-  } 
-
-  .biz-banner h2  { 
-    margin-top: 8px; 
-    font-size: 40px; 
-    font-weight: 500; 
-    line-height: 1.2; 
-    letter-spacing: 0; 
-    text-shadow: 1px 1px 7.5px rgba(0,0,0,.15);
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner h2  { 
-    margin-top: 10px; 
-    font-weight: 300; 
-    text-shadow: 2px 2px 15px rgba(0,0,0,.15);
-  } 
-}     
-
-@media only screen and (min-width: 1280px){ 
-  .biz-banner h2  { 
-    font-size: 44px;
-  } 
-}     
-
-@media all{ 
-  .biz-banner-entrace { 
-    position: relative; 
-    margin-top: 40px;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-entrace { 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex;
-  } 
-}     
-
-@media all{ 
-  .biz-banner-popular { 
-    display: none;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-popular { 
-    margin-top: 30px; 
-    width: 718px; 
-    height: 37px; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    overflow: hidden; 
-    color: #fff;
-  } 
-}     
-
-@media only screen and (min-width: 1280px){ 
-  .biz-banner-popular { 
-    width: 844px;
-  } 
-}     
-
-@media only screen and (min-width: 1366px){ 
-  .biz-banner-popular { 
-    width: 898px;
-  } 
-}     
-
-
-
-
-
-
-
-
-
- 
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-entrace .join-free-btn.ft-btn:hover { 
-    background-color: rgba(0,0,0,.7); 
-    color: #ccc;
-  } 
-
-  .biz-banner-popular-label { 
-    -ms-flex-item-align: center; 
-    align-self: center; 
-    -ms-flex-negative: 0; 
-    flex-shrink: 0; 
-    font-size: 16px;
-  } 
-
-  .biz-banner .popular-tags  { 
-    margin-left: 20px; 
-    -webkit-box-flex: 1; 
-    -ms-flex-positive: 1; 
-    flex-grow: 1; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    -ms-flex-item-align: self-start; 
-    align-self: self-start; 
-    -ms-flex-wrap: wrap; 
-    flex-wrap: wrap; 
-    gap: 10px 20px;
-  } 
-}     
-
-@media all{ 
-  .ft-input-group { 
-    display: -webkit-inline-box; 
-    display: -ms-inline-flexbox; 
-    display: inline-flex; 
-    position: relative; 
-    font-size: 14px; 
-    background: #fff; 
-    border-radius: 3px; 
-    height: -webkit-min-content; 
-    height: -moz-min-content; 
-    height: min-content;
-  } 
-
-  .ft-input-group:not(.has-addon-left, .has-addon-right, .has-error) { 
-    border-radius: 3px; 
-    border: 1px solid #ced3d9;
-  } 
-
-  .biz-banner-search-group.ft-input-group { 
-    width: 505px; 
-    border: 0; 
-    border-radius: 100px 0 0 100px; 
-    background: 0 0; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    overflow: hidden;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-search-group.ft-input-group { 
-    width: 578px; 
-    display: -webkit-inline-box; 
-    display: -ms-inline-flexbox; 
-    display: inline-flex;
-  } 
-}     
-
-@media only screen and (min-width: 1280px){ 
-  .biz-banner-search-group.ft-input-group { 
-    width: 704px;
-  } 
-}     
-
-@media only screen and (min-width: 1366px){ 
-  .biz-banner-search-group.ft-input-group { 
-    width: 758px;
-  } 
-}     
-
-@media all{ 
-  .ft-input-group:not(.has-addon-left, .has-addon-right, .has-error):not(.has-focus, .has-disabled):hover { 
-    border-color: #888;
-  } 
-
-  button { 
-    margin: 0; 
-    padding: 0;
-  } 
-
-  button { 
-    font: 12px/1.5 Roboto,Arial,sans-serif;
-  } 
-
-  button { 
-    line-height: normal;
-  } 
-
-  button { 
-    cursor: pointer;
-  } 
-}     
-
-button { 
-    font-family: inherit; 
-    font-size: 100%; 
-    margin: 0; 
-    padding: 0;
-} 
-
-@media all{ 
-  .ft-btn-primary { 
-    color: #fff;
-  } 
-
-
-  .biz-banner .biz-banner-search-btn  { 
-    padding: 16px 20px 16px 16px; 
-    border: 0; 
-    border-radius: 0 100px 100px 0;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner .biz-banner-search-btn  { 
-    padding: 15px 30px 15px 25px;
-  } 
-}     
-
-@media all{ 
- 
-  .ft-icon { 
-    font-family: ft-icon; 
-    font-weight: 400; 
-    font-style: normal; 
-    font-variant: normal; 
-    text-transform: none; 
-    line-height: 1.5; 
-    speak: none; 
-    vertical-align: baseline; 
-    display: inline-block; 
-    -webkit-font-smoothing: antialiased; 
-    -webkit-text-stroke-width: .1px; 
-    -moz-osx-font-smoothing: grayscale;
-  } 
-
-  .biz-banner-entrace .ft-icon  { 
-    font-size: 24px; 
-    line-height: 1.5;
-  } 
-
-  .biz-banner-entrace .ft-icon  { 
-    vertical-align: middle;
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner-entrace .join-free-btn.ft-btn .ft-icon  { 
-    margin-left: 10px; 
-    line-height: 1;
-  } 
-}     
-
-@media all{ 
-  .ft-icon.icon-right:before { 
-    content: "";
-  } 
-}     
-
-@media only screen and (min-width: 1024px){ 
-  .biz-banner .popular-tags .popular-tag  { 
-    padding: 4px 19px; 
-    border: 1px solid #fff; 
-    border-radius: 100px; 
-    background-color: transparent; 
-    color: #fff; 
-    font-size: 16px;
-  } 
-
-  .biz-banner .popular-tags .popular-tag:hover { 
-    background-color: rgba(0,0,0,.5);
-  } 
-
-  .biz-banner .popular-tags .popular-tag + .popular-tag  { 
-    margin-left: 0;
-  } 
-}     
-
- 
-  @media only screen and (max-width: 1023px) {
+@media all {
     .biz-banner {
-      padding-top: 50px; /* Adjust padding for small screens */
-      height: 300px; /* Smaller height for small screens */
+        padding-top: 2.2rem;
+        width: 100%;
+        height: 80vh !important;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        background-repeat: no-repeat;
+        background-position: center 2.2rem;
+        background-size: auto calc(100% - 2.2rem);
+        background-color: #24221e;
+        position: relative;
+        z-index: 1;
     }
-  
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner {
+        padding-top: 72px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-position: center top;
+        background-size: auto 100%;
+        height: 600px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner {
+        height: 620px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner {
+        height: 680px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .biz-banner {
+        height: 700px;
+    }
+}
+
+@media all {
+    img {
+        border: 0;
+    }
+
+    .biz-banner .biz-banner-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -o-object-fit: cover;
+        object-fit: fill;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .biz-body {
+        /* margin: 0 auto; */
+        width: 80%;
+        max-width: 1440px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+@media all {
+    .biz-banner-content {
+        padding: 40px 40px 38px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner-content {
+        padding: 40px 20px 0;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner-content {
+        padding: 40px 90px 0;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner-content {
+        padding: 60px 53px 0;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .biz-banner-content {
+        padding: 60px 90px 0;
+    }
+}
+
+@media all {
     .biz-banner h1 {
-      font-size: 36px; /* Smaller font size for smaller screens */
-      text-align: center;
+        margin: 0;
+        font-size: 70px;
+        line-height: 1.2;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
     }
-  
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner h1 {
+        line-height: 1.1;
+        font-size: 90px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner h1 {
+        font-size: 96px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner h1 {
+        font-size: 100px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner h1.en-title {
+        width: 90%;
+    }
+}
+
+@media all {
+    h2 {
+        font-size: 100%;
+        font-weight: bold;
+        margin: 0;
+    }
+
     .biz-banner h2 {
-      font-size: 24px; /* Smaller font size */
-      text-align: center;
-      margin-top: 10px;
+        color: #fff;
     }
-  
+
+    .biz-banner h2 {
+        margin-top: 8px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0;
+        text-shadow: 1px 1px 7.5px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner h2 {
+        margin-top: 10px;
+        font-weight: 300;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner h2 {
+        font-size: 44px;
+    }
+}
+
+@media all {
     .biz-banner-entrace {
-      padding: 0 20px; /* Add padding for smaller screens */
-      text-align: center;
+        position: relative;
+        margin-top: 40px;
     }
-  
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner-entrace {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+@media all {
     .biz-banner-popular {
-      display: block;
-      margin-top: 20px;
-      display: none;
+        display: none;
     }
-  
-    .biz-banner-search-group.ft-input-group {
-      width: 100%;
-      border-radius: 50px; /* Adjust search bar to fit screen */
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner-popular {
+        margin-top: 30px;
+        width: 718px;
+        height: 37px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        color: #fff;
     }
-  
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner-popular {
+        width: 844px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner-popular {
+        width: 898px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
     .biz-banner-entrace .join-free-btn.ft-btn:hover {
-      background-color: rgba(0,0,0,.7);
-      color: #ccc;
-    }
-  }
-  
-  /* Larger screens (1024px and up) */
-  @media only screen and (min-width: 1024px) {
-  
-  
-  
-    .biz-banner h2 {
-      font-size: 44px;
-    }
-  
-    .biz-banner-entrace {
-      display: flex;
-    }
-  
-    .biz-banner-popular {
-      display: flex;
-      margin-top: 30px;
-    }
-  
-    .biz-banner-search-group.ft-input-group {
-      width: 578px; /* Adjust search bar width */
-    }
-  }
-  
-  @media only screen and (min-width: 1280px) {
-    .biz-banner {
-      height: 620px;
-    }
-  
-  
-    .biz-banner h2 {
-      font-size: 48px;
-    }
-  
-    .biz-banner-popular {
-      width: 844px;
-    }
-  
-    .biz-banner-search-group.ft-input-group {
-      width: 704px;
-    }
-  }
-  
-  @media only screen and (min-width: 1366px) {
-    .biz-banner {
-      height: 680px;
-    }
-  
-   
-  
-    .biz-banner h2 {
-      font-size: 52px;
-    }
-  
-    .biz-banner-popular {
-      width: 898px;
-    }
-  
-    .biz-banner-search-group.ft-input-group {
-      width: 758px;
-    }
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    .biz-banner {
-      height: 700px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ccc;
     }
 
-  
-    .biz-banner h2 {
-      font-size: 56px;
+    .biz-banner-popular-label {
+        -ms-flex-item-align: center;
+        align-self: center;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        font-size: 16px;
     }
-  
-    .biz-banner-popular {
-      width: 980px;
+
+    .biz-banner .popular-tags {
+        margin-left: 20px;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-item-align: self-start;
+        align-self: self-start;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 10px 20px;
     }
-  
+}
+
+@media all {
+    .ft-input-group {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        position: relative;
+        font-size: 14px;
+        background: #fff;
+        border-radius: 3px;
+        height: -webkit-min-content;
+        height: -moz-min-content;
+        height: min-content;
+    }
+
+    .ft-input-group:not(.has-addon-left, .has-addon-right, .has-error) {
+        border-radius: 3px;
+        border: 1px solid #ced3d9;
+    }
+
     .biz-banner-search-group.ft-input-group {
-      width: 800px;
+        width: 505px;
+        border: 0;
+        border-radius: 100px 0 0 100px;
+        background: 0 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
     }
-  }
-  
+}
 
-
-  @media only screen and (max-width: 768px) {
-    .biz-banner-entrace {
-      flex-direction: column;
-      align-items: center; /* Center items vertically on small screens */
+@media only screen and (min-width: 1024px) {
+    .biz-banner-search-group.ft-input-group {
+        width: 578px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
     }
-  
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner-search-group.ft-input-group {
+        width: 704px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner-search-group.ft-input-group {
+        width: 758px;
+    }
+}
+
+@media all {
+    .ft-input-group:not(.has-addon-left, .has-addon-right, .has-error):not(
+            .has-focus,
+            .has-disabled
+        ):hover {
+        border-color: #888;
+    }
+
+    button {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        font: 12px/1.5 Roboto, Arial, sans-serif;
+    }
+
+    button {
+        line-height: normal;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}
+
+button {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media all {
+    .ft-btn-primary {
+        color: #fff;
+    }
+
+    .biz-banner .biz-banner-search-btn {
+        padding: 16px 20px 16px 16px;
+        border: 0;
+        border-radius: 0 100px 100px 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner .biz-banner-search-btn {
+        padding: 15px 30px 15px 25px;
+    }
+}
+
+@media all {
+    .ft-icon {
+        font-family: ft-icon;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1.5;
+        speak: none;
+        vertical-align: baseline;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.1px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .biz-banner-entrace .ft-icon {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    .biz-banner-entrace .ft-icon {
+        vertical-align: middle;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner-entrace .join-free-btn.ft-btn .ft-icon {
+        margin-left: 10px;
+        line-height: 1;
+    }
+}
+
+@media all {
+    .ft-icon.icon-right:before {
+        content: '';
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .biz-banner .popular-tags .popular-tag {
+        padding: 4px 19px;
+        border: 1px solid #fff;
+        border-radius: 100px;
+        background-color: transparent;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .biz-banner .popular-tags .popular-tag:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .biz-banner .popular-tags .popular-tag + .popular-tag {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .biz-banner {
+        padding-top: 50px; /* Adjust padding for small screens */
+        height: 300px; /* Smaller height for small screens */
+    }
+
     .biz-banner h1 {
-      font-size: 36px; /* Smaller font size for h1 */
+        font-size: 36px; /* Smaller font size for smaller screens */
+        text-align: center;
     }
-  
+
     .biz-banner h2 {
-      font-size: 20px; /* Smaller font size for h2 */
+        font-size: 24px; /* Smaller font size */
+        text-align: center;
+        margin-top: 10px;
     }
-  }
 
+    .biz-banner-entrace {
+        padding: 0 20px; /* Add padding for smaller screens */
+        text-align: center;
+    }
 
+    .biz-banner-popular {
+        display: block;
+        margin-top: 20px;
+        display: none;
+    }
 
-  @media all{ 
+    .biz-banner-search-group.ft-input-group {
+        width: 100%;
+        border-radius: 50px; /* Adjust search bar to fit screen */
+    }
 
-    .biz-banner { 
-      padding-top: 2.2rem; 
-      width: 100%; 
-      height: 100%; 
-      -webkit-box-sizing: content-box; 
-      box-sizing: content-box; 
-      background-repeat: no-repeat; 
-      background-position: center 2.2rem; 
-      background-size: auto calc(100% - 2.2rem); 
-      background-color: #24221e; 
-      position: relative; 
-      z-index: 1;
-      
-    } 
-  }   
+    .biz-banner-entrace .join-free-btn.ft-btn:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ccc;
+    }
+}
+
+/* Larger screens (1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .biz-banner h1 {
+        font-size: 90px; /* Keep larger text for larger screens */
+    }
+
+    .biz-banner h2 {
+        font-size: 44px;
+    }
+
+    .biz-banner-entrace {
+        display: flex;
+    }
+
+    .biz-banner-popular {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .biz-banner-search-group.ft-input-group {
+        width: 578px; /* Adjust search bar width */
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .biz-banner {
+        height: 620px;
+    }
+
+    .biz-banner h1 {
+        font-size: 96px;
+    }
+
+    .biz-banner h2 {
+        font-size: 48px;
+    }
+
+    .biz-banner-popular {
+        width: 844px;
+    }
+
+    .biz-banner-search-group.ft-input-group {
+        width: 704px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .biz-banner {
+        height: 680px;
+    }
+
+    .biz-banner h1 {
+        font-size: 100px;
+    }
+
+    .biz-banner h2 {
+        font-size: 52px;
+    }
+
+    .biz-banner-popular {
+        width: 898px;
+    }
+
+    .biz-banner-search-group.ft-input-group {
+        width: 758px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .biz-banner {
+        height: 700px;
+    }
+
+    .biz-banner h1 {
+        font-size: 120px;
+    }
+
+    .biz-banner h2 {
+        font-size: 56px;
+    }
+
+    .biz-banner-popular {
+        width: 980px;
+    }
+
+    .biz-banner-search-group.ft-input-group {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .biz-banner-entrace {
+        flex-direction: column;
+        align-items: center; /* Center items vertically on small screens */
+    }
+
+    .biz-banner h1 {
+        font-size: 36px; /* Smaller font size for h1 */
+    }
+
+    .biz-banner h2 {
+        font-size: 20px; /* Smaller font size for h2 */
+    }
+}
+
+@media all {
+    .biz-banner {
+        padding-top: 2.2rem;
+        width: 100%;
+        height: 100%;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        background-repeat: no-repeat;
+        background-position: center 2.2rem;
+        background-size: auto calc(100% - 2.2rem);
+        background-color: #24221e;
+        position: relative;
+        z-index: 1;
+    }
+}

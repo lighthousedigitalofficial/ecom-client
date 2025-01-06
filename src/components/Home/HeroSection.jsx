@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import './HeroSection.css';
-import MainSearch from './MainSearch';
+import React, { useEffect, useState } from 'react'
+import { FaArrowRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import './HeroSection.css'
+import MainSearch from './MainSearch'
 
 const HeroSection = () => {
    const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -74,17 +74,13 @@ const HeroSection = () => {
               ))}
             </div>
           </div> */}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default HeroSection;
-
-
-
-
+export default HeroSection
 
 // import React, { useState, useEffect } from 'react';
 // import { FaArrowRight } from 'react-icons/fa';

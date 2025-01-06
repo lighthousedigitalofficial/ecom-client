@@ -34,6 +34,7 @@ import AppPromotion from '../../components/Banners/AppPromotion'
 import BusinessPartners from '../../components/Partners/BusinessPartners'
 import JoinFree from '../../components/JoinForFree'
 import HeroTabData from '../../components/Home/HeroTabData'
+import ProductsCarousel from '../../components/Banners/ProductsBanner'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -58,10 +59,11 @@ const HomePage = () => {
                         <Regions />
                         <Categories />
                     </section>
-
                     <section className="py-2 mb-4">
                         <ProductRecommendations />
                     </section>
+                    <ProductsCarousel />
+
                     {/* <section className="py-2 mb-4">
                     <FlashDeal />
                 </section> */}
@@ -72,7 +74,7 @@ const HomePage = () => {
                         <img
                             src={PromoSaleImage}
                             alt="Promo Sale Banner"
-                            className="rounded-lg"
+                            className="rounded-lg w-full"
                             loading="lazy"
                         />
                     </section>
@@ -91,7 +93,6 @@ const HomePage = () => {
                                     className="w-full rounded-lg"
                                     loading="lazy"
                                 />
-
                             </div>
                             <div className="relative lg:w-1/2">
                                 {/* Image */}

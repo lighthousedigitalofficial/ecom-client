@@ -8,6 +8,7 @@ import img from '../../../assets/no-product-found.png'
 import { TablePagination } from '@mui/material'
 import ProductsHeader from '../../../components/Product/subcomponent/ProductsHeader'
 import { getRegionLabel } from '../../../utils/helpers'
+import RegionCategory from '../../../components/Categories/RegionCategory'
 
 export const RegionProducts = () => {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -67,7 +68,7 @@ export const RegionProducts = () => {
                 title={`${getRegionLabel(region)} Products`}
                 totalItems={data?.totalDocs}
             />
-
+            <RegionCategory />
             <div className="flex justify-between items-start gap-4 my-4 ">
                 <FilterSidebar filters={filters} />
                 {data?.doc?.length ? (

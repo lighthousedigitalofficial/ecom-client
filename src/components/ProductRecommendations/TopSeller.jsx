@@ -4,6 +4,9 @@ import 'react-multi-carousel/lib/styles.css'
 import { FaAngleLeft, FaAngleRight, FaBoxes } from 'react-icons/fa'
 import NewArrival from './NewArrival'
 import RetailWholesale from './RetailWholesale'
+import { useGetVendorsQuery } from '../../redux/slices/vendorsApiSlice'
+import Loader from '../Loader'
+import keys from '../../config/keys'
 
 // Custom arrow components
 const CustomLeftArrow = ({ onClick }) => (
@@ -57,7 +60,14 @@ const responsive = {
 }
 
 const TopSeller = () => {
-    return (
+    const { data: sellers, isLoading } = useGetVendorsQuery({
+        limit: 10,
+        sort: '-approvedProducts',
+    })
+
+    return isLoading ? (
+        <Loader />
+    ) : sellers && sellers?.doc ? (
         <>
             <div className="bg-white p-3 shadow rounded-md">
                 <div className="flex items-center gap-2 text-primary-500 mb-2">
@@ -75,21 +85,27 @@ const TopSeller = () => {
                     itemClass="px-2"
                     renderDotsOutside
                 >
-                    {products.map((product, index) => (
+                    {sellers?.doc?.map((seller, index) => (
                         <div
                             key={index}
                             className="bg-gray-100   rounded-lg shadow-md hover:shadow-lg transition duration-300"
                         >
                             <img
-                                src={product.image}
-                                alt={product.name}
+                                src={
+                                    seller?.logo
+                                        ? seller.logo.startsWith('vendors')
+                                            ? `${keys.BUCKET_URL}${seller.logo}`
+                                            : seller.logo
+                                        : keys.DEFAULT_IMG
+                                }
+                                alt={seller.firstName}
                                 className="w-full h-56 object-center  rounded-t-md"
                             />
                             <h3 className="text-sm md:text-lg  text-center text-nowrap font-semibold py-2 text-primary-500">
-                                {product.name}
+                                {seller.firstName + ' ' + seller.lastName}
                             </h3>
                             {/* <p className="text-sm text-center py-2 text-gray-600">
-                                {product.price}
+                                {seller.price}
                             </p> */}
                         </div>
                     ))}
@@ -101,7 +117,7 @@ const TopSeller = () => {
                 <RetailWholesale />
             </div>
         </>
-    )
+    ) : null
 }
 
 export default TopSeller

@@ -22,8 +22,7 @@ const Loader = lazy(() => import('./../../components/Loader'))
 const TopSeller = lazy(() => import('../../components/Seller/TopSeller'))
 const HeroSection = lazy(() => import('./../../components/Home/HeroSection'))
 const Brands = lazy(() => import('../../components/Brands'))
-const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
-
+// const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
 import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
 import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'
@@ -93,8 +92,6 @@ const HomePage = () => {
                                     loading="lazy"
                                 />
 
-                                {/* Black overlay */}
-                                {/* <div className="absolute inset-0 bg-black  rounded-lg"></div> */}
                             </div>
                             <div className="relative lg:w-1/2">
                                 {/* Image */}
@@ -117,8 +114,8 @@ const HomePage = () => {
                         </div>
                     </section>
                     <AppPromotion />
-                    {/* <BusinessPartners /> */}
-                    <TopProducts />
+                    <BusinessPartners />
+                    {/* <TopProducts /> */}
                     <section>
                         <Brands />
                     </section>

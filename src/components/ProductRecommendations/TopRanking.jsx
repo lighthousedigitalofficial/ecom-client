@@ -1,4 +1,3 @@
-import React from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'

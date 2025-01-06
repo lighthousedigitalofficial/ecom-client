@@ -1,10 +1,10 @@
 // import Topbar from "./Topbar";
 import NavbarSticky from './NavbarSticky'
-import BottomNavbar from './BottomNavbar'
+// import BottomNavbar from './BottomNavbar'
 
 const Header = () => {
     return (
-        <div className="pt-2 bg-primary-500 pb-0">
+        <div className="bg-white">
             {/* <Topbar /> */}
             <NavbarSticky />
             {/* <BottomNavbar /> */}

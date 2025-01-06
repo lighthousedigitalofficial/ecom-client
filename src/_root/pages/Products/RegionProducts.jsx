@@ -1,7 +1,10 @@
 import FilterSidebar from '../../../components/Sort/FilterSidebar'
 import Loader from '../../../components/Loader'
 import ProductCard from '../../../components/Product/ProductCard'
-import { useGetDiscountedProductsQuery } from '../../../redux/slices/productsApiSlice'
+import {
+    useGetDiscountedProductsQuery,
+    useGetProductsQuery,
+} from '../../../redux/slices/productsApiSlice'
 import { useSearchParams } from 'react-router-dom'
 import { useState } from 'react'
 import img from '../../../assets/no-product-found.png'
@@ -31,7 +34,7 @@ export const RegionProducts = () => {
     )
 
     // Fetch discounted products
-    const { data, isFetching } = useGetDiscountedProductsQuery({
+    const { data, isFetching } = useGetProductsQuery({
         ...filters,
         page: currentPage + 1, // API expects 1-based indexing
         limit: rowsPerPage,

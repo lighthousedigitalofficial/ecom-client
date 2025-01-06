@@ -22,7 +22,7 @@ const Loader = lazy(() => import('./../../components/Loader'))
 const TopSeller = lazy(() => import('../../components/Seller/TopSeller'))
 const HeroSection = lazy(() => import('./../../components/Home/HeroSection'))
 const Brands = lazy(() => import('../../components/Brands'))
-const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
+// const TopProducts = lazy(() => import('../../components/Home/TopProducts'))
 
 import PromoSaleImage from './../../assets/banner/uraan-add-banner.jpg'
 import MegaSaleBanner1 from './../../assets/banner/ad-banner-2.jpg'

@@ -5,32 +5,32 @@ import { Link } from "react-router-dom";
 const stats = [
   {
     id: 1,
-    value: "782,646M+",
+    value: "7.8M+",
     label: "products price",
     icon: <FaBox />,
     link: "/",
   },
   {
     id: 2,
-    value: "225,561+",
+    value: "226k+",
     label: "suppliers",
     icon: <FaUsers />,
     link: "/",
   },
   {
     id: 3,
-    value: "5,900",
+    value: "50+",
     label: "product categories",
     icon: <FaListUl />,
     link: "/",
   },
-  {
-    id: 4,
-    value: "200+",
-    label: "countries and regions",
-    icon: <FaGlobe />,
-    link: "/",
-  },
+  // {
+  //   id: 4,
+  //   value: "200+",
+  //   label: "countries and regions",
+  //   icon: <FaGlobe />,
+  //   link: "/",
+  // },
 ];
 
 const StatsData = () => {

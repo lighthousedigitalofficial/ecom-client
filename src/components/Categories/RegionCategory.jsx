@@ -1,9 +1,9 @@
 import {
     FaSeedling,
     FaIndustry,
-    FaAppleAlt,
-    FaTractor,
-    FaMapMarkerAlt,
+    // FaAppleAlt,
+    // FaTractor,
+    // FaMapMarkerAlt,
     FaTshirt,
 } from 'react-icons/fa'
 import MainCategoryCard from './MainCategoryCard'
@@ -17,7 +17,7 @@ const RegionCategory = () => {
     const staticCategoryData = {
         'Agro-Products': { color: '#4CAF50', icon: FaSeedling },
         'Non-Agro Products': { color: '#FF5722', icon: FaIndustry },
-        'Textile and Lether': { color: '#673AB7', icon: FaTshirt },
+        'Textile and Leather': { color: '#673AB7', icon: FaTshirt },
         // 'Value-Added': { color: '#FFC107', icon: FaAppleAlt },
         // 'Specialized Agricultural': { color: '#673AB7', icon: FaTractor },
         // 'Regional Specialties': { color: '#03A9F4', icon: FaMapMarkerAlt },

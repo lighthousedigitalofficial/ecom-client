@@ -1,4 +1,4 @@
-import { useGetSubCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
+import { useGetCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
 import Loader from '../Loader'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -6,7 +6,7 @@ import { capitalizeFirstLetter } from '../../utils'
 import { SlArrowRight } from 'react-icons/sl'
 
 const CategoryDropDown = () => {
-    const { data: categories, isLoading } = useGetSubCategoriesQuery({})
+    const { data: categories, isLoading } = useGetCategoriesQuery({})
     const [hoveredCategory, setHoveredCategory] = useState(null)
     const [hoveredSubCategory, setHoveredSubCategory] = useState(null)
 

@@ -35,9 +35,9 @@ const HeroSection = () => {
         loading="eager"
       />
       <div className="biz-body">
-        <div className="biz-banner-content">
+        <div className="biz-banner-content mt-8">
           {/* <h1 className="en-title text-white">SHOP SMART, LIVE BETTER</h1> */}
-          <h1 className="en-title text-white md:text-[5rem] text-[2rem]">Pakistan's <br/> E-commerce Hub</h1>
+          <h1 className="en-title text-white md:text-[4rem] text-[2rem]">Pakistan's <br/> E-commerce Hub</h1>
 
           <h2>Smart Shopping, Endless Opportunities</h2>
 

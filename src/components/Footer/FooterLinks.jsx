@@ -1,7 +1,7 @@
 const links = [
     'Hot Products',
-    'China Products',
-    'China Manufacturers/Suppliers',
+    'Pakistani Products',
+    'Pakistani Manufacturers/Suppliers',
     'Wholesale Products',
     'Wholesale Price',
     'Continent Channel',

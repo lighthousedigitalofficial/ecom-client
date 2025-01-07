@@ -105,7 +105,6 @@
 @media all {
     .biz-banner h1 {
         margin: 0;
-        font-size: 70px;
         line-height: 1.2;
         font-weight: 800;
         text-transform: uppercase;
@@ -114,22 +113,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .biz-banner h1 {
-        line-height: 1.1;
-        font-size: 90px;
-    }
+    
 }
 
 @media only screen and (min-width: 1280px) {
-    .biz-banner h1 {
-        font-size: 96px;
-    }
+    
 }
 
 @media only screen and (min-width: 1366px) {
-    .biz-banner h1 {
-        font-size: 100px;
-    }
+    
 }
 
 @media only screen and (min-width: 1024px) {
@@ -422,7 +414,7 @@ button {
     }
 
     .biz-banner h2 {
-        font-size: 24px; /* Smaller font size */
+        font-size: 20px; /* Smaller font size */
         text-align: center;
         margin-top: 10px;
     }
@@ -451,12 +443,10 @@ button {
 
 /* Larger screens (1024px and up) */
 @media only screen and (min-width: 1024px) {
-    .biz-banner h1 {
-        font-size: 90px; /* Keep larger text for larger screens */
-    }
+    
 
     .biz-banner h2 {
-        font-size: 44px;
+        font-size: 40px;
     }
 
     .biz-banner-entrace {
@@ -478,12 +468,10 @@ button {
         height: 620px;
     }
 
-    .biz-banner h1 {
-        font-size: 96px;
-    }
+    
 
     .biz-banner h2 {
-        font-size: 48px;
+        font-size: 44px;
     }
 
     .biz-banner-popular {
@@ -500,12 +488,10 @@ button {
         height: 680px;
     }
 
-    .biz-banner h1 {
-        font-size: 100px;
-    }
+    
 
     .biz-banner h2 {
-        font-size: 52px;
+        font-size: 48px;
     }
 
     .biz-banner-popular {
@@ -522,12 +508,10 @@ button {
         height: 700px;
     }
 
-    .biz-banner h1 {
-        font-size: 120px;
-    }
+    
 
     .biz-banner h2 {
-        font-size: 56px;
+        font-size: 50px;
     }
 
     .biz-banner-popular {

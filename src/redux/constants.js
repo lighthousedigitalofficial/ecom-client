@@ -1,5 +1,6 @@
 export const FLASHDEALS_URL = '/admin/flash-deals'
 export const CATEGORIES_URL = '/admin/categories'
+export const SUB_CATEGORIES_URL = '/admin/sub-categories'
 export const BRANDS_URL = '/admin/brands'
 export const BANNERS_URL = '/admin/banners'
 

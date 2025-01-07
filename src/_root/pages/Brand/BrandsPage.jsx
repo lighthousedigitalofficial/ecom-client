@@ -17,7 +17,7 @@ const BrandsPage = () => {
     return isLoading ? (
         <Loader />
     ) : (
-        <div className="py-4">
+        <div className="mt-4 w-[95vw] mx-auto py-4">
             <div className="bg-primary-100 flex lg:flex-row flex-col gap-2 justify-between items-center p-8 rounded-lg mb-4">
                 <div>
                     <h2 className="text-2xl uppercase font-bold text-primary-400">
@@ -43,7 +43,7 @@ const BrandsPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[100vw] py-4 mx-auto">
+            <div className="w-full py-4 mx-auto">
                 {filteredBrands && filteredBrands.length > 0 ? (
                     <div className="flex flex-wrap gap-4 transition-all ease-in">
                         {filteredBrands.map((brand, index) => (

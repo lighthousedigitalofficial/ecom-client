@@ -1,4 +1,4 @@
-import { CATEGORIES_URL } from '../constants'
+import { CATEGORIES_URL, SUB_CATEGORIES_URL } from '../constants'
 import { apiSlice } from './apiSlice'
 
 export const categoriesApiSlice = apiSlice.injectEndpoints({
@@ -6,6 +6,13 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
         getCategories: builder.query({
             query: (query) => ({
                 url: `${CATEGORIES_URL}?sort=priority`,
+                params: query,
+            }),
+            keepUnusedDataFor: 100,
+        }),
+        getSubCategories: builder.query({
+            query: (query) => ({
+                url: `${SUB_CATEGORIES_URL}`,
                 params: query,
             }),
             keepUnusedDataFor: 100,
@@ -54,4 +61,5 @@ export const {
     useUpdateCategoryMutation,
     useDeleteCategoryMutation,
     useGetCategoryBySlugQuery,
+    useGetSubCategoriesQuery,
 } = categoriesApiSlice

@@ -1,14 +1,12 @@
-import { useGetCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
+import { useGetSubCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
 import Loader from '../Loader'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { capitalizeFirstLetter } from '../../utils'
 import { SlArrowRight } from 'react-icons/sl'
-import keys from './../../config/keys'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const CategoryDropDown = () => {
-    const { data: categories, isLoading } = useGetCategoriesQuery({})
+    const { data: categories, isLoading } = useGetSubCategoriesQuery({})
     const [hoveredCategory, setHoveredCategory] = useState(null)
     const [hoveredSubCategory, setHoveredSubCategory] = useState(null)
 
@@ -37,11 +35,11 @@ const CategoryDropDown = () => {
                         const hasSubCategories =
                             category.subCategories?.length > 0
 
-                        const categoryLogo = category?.logo
-                            ? category.logo.startsWith('category')
-                                ? `${keys.BUCKET_URL}${category.logo}`
-                                : category.logo
-                            : keys.DEFAULT_IMG
+                        // const categoryLogo = category?.logo
+                        //     ? category.logo.startsWith('category')
+                        //         ? `${keys.BUCKET_URL}${category.logo}`
+                        //         : category.logo
+                        //     : keys.DEFAULT_IMG
 
                         return (
                             <div
@@ -56,14 +54,14 @@ const CategoryDropDown = () => {
                                     className={`flex items-center group gap-4 px-2 py-[1.4vh]
                                     cursor-pointer w-full hover:bg-gray-100`}
                                 >
-                                    <div className="image">
+                                    {/* <div className="image">
                                         <img
                                             src={categoryLogo}
                                             effect="blur" // You can use "blur" or "opacity" as lazy load effect
                                             alt={category.name}
                                             className="h-6 w-6 object-cover rounded-full"
                                         />
-                                    </div>
+                                    </div> */}
                                     <span className="text-gray-700 group-hover:text-primary-600 flex justify-between w-full text-sm  items-center">
                                         {capitalizeFirstLetter(category.name)}
                                         {hasSubCategories && (

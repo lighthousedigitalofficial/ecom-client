@@ -4,6 +4,7 @@ import {
     FaAppleAlt,
     FaTractor,
     FaMapMarkerAlt,
+    FaTshirt,
 } from 'react-icons/fa'
 import MainCategoryCard from './MainCategoryCard'
 import { useGetCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
@@ -16,9 +17,10 @@ const RegionCategory = () => {
     const staticCategoryData = {
         'Agro-Products': { color: '#4CAF50', icon: FaSeedling },
         'Non-Agro Products': { color: '#FF5722', icon: FaIndustry },
-        'Value-Added': { color: '#FFC107', icon: FaAppleAlt },
-        'Specialized Agricultural': { color: '#673AB7', icon: FaTractor },
-        'Regional Specialties': { color: '#03A9F4', icon: FaMapMarkerAlt },
+        'Textile and Lether': { color: '#673AB7', icon: FaTshirt },
+        // 'Value-Added': { color: '#FFC107', icon: FaAppleAlt },
+        // 'Specialized Agricultural': { color: '#673AB7', icon: FaTractor },
+        // 'Regional Specialties': { color: '#03A9F4', icon: FaMapMarkerAlt },
     }
 
     // Filter and map the categories to only include those in staticCategoryData

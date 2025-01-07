@@ -1,10 +1,7 @@
 import FilterSidebar from '../../../components/Sort/FilterSidebar'
 import Loader from '../../../components/Loader'
 import ProductCard from '../../../components/Product/ProductCard'
-import {
-    useGetDiscountedProductsQuery,
-    useGetProductsQuery,
-} from '../../../redux/slices/productsApiSlice'
+import { useGetProductsQuery } from '../../../redux/slices/productsApiSlice'
 import { useSearchParams } from 'react-router-dom'
 import { useState } from 'react'
 import img from '../../../assets/no-product-found.png'

@@ -1,9 +1,9 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import img1 from '../../assets/slideshow-img/Uraan Pakistan Web Banner Design 03.jpg'
+import img1 from '../../assets/slideshow-img/background-shadow.jpg'
 import img2 from '../../assets/socials-icons/apple_app.png'
 import img3 from '../../assets/socials-icons/google_app.png'
 import img4 from '../../assets/socials-icons/app-logo.png'
+
 const AppPromotion = () => {
     return (
         <div

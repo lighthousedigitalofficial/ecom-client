@@ -107,7 +107,7 @@ const CategoryDropDown = () => {
                                                             }
                                                         >
                                                             <Link
-                                                                to={`/products?subcategory=${subCategory._id}`}
+                                                                to={`/products?subCategory=${subCategory._id}`}
                                                                 className="flex justify-between p-2 hover:bg-gray-100"
                                                             >
                                                                 <span className="px-5 text-sm">

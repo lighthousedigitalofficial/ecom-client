@@ -144,6 +144,10 @@ const Product = ({ product }) => {
                             </h2>
                         )}
                     </div>
+                    <p className="text-gray-900 bg-primary-100 w-fit p-2 rounded-md font-bold">
+                        <span>HS Code: </span>
+                        {product.HSCode || 249241}
+                    </p>
                     <div className="flex items-center gap-2">
                         <h3 className="text-gray-800 font-bold">
                             Total Price:

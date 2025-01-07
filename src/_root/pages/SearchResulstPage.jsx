@@ -16,7 +16,7 @@ const SearchResultPage = () => {
     console.log(data)
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="mx-auto p-4">
             {isLoading ? (
                 <Loader />
             ) : data && data.results && data.totalResults > 0 ? (

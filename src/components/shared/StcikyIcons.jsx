@@ -26,17 +26,18 @@ const StickyIcons = () => {
     }, [checkScrollTop, showScroll])
 
     return (
-        <div className="fixed bottom-4 z-[1000] right-4 flex flex-col items-end space-y-3">
-            <Link
-                to={`https://wa.me/${contact}`}
-                className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact Us on WhatsApp"
-            >
-                <FaWhatsapp size={24} />
-            </Link>
-            {showScroll && (
+        showScroll && (
+            <div className="fixed bottom-4 z-[1000] right-4 flex flex-col items-end space-y-3">
+                <Link
+                    to={`https://wa.me/${contact}`}
+                    className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Contact Us on WhatsApp"
+                >
+                    <FaWhatsapp size={24} />
+                </Link>
+
                 <button
                     onClick={scrollTop}
                     className={`bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 ${
@@ -46,8 +47,8 @@ const StickyIcons = () => {
                 >
                     <FaAngleUp size={24} />
                 </button>
-            )}
-        </div>
+            </div>
+        )
     )
 }
 

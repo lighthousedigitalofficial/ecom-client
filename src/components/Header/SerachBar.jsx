@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { FaTimes } from 'react-icons/fa'
-import { HiSearch } from 'react-icons/hi'
+import { FaSearch, FaTimes } from 'react-icons/fa'
 import useFetchProducts from './../../hooks/useFetchProducts'
 
 const SearchBar = () => {
@@ -88,47 +87,38 @@ const SearchBar = () => {
     }, [query])
 
     return (
-        <div ref={searchBarRef} className="relative mx-1">
-            <form onSubmit={handleSearch} className="flex items-center">
+        <div className="relative mx-1 w-full">
+            <form
+                onSubmit={handleSearch}
+                className="relative flex items-center w-full"
+            >
                 <input
-                    className="w-full py-2 px-4 rounded-r-none rounded border border-primary-400 outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
                     type="search"
-                    autoComplete="off"
                     placeholder="Search for items..."
                     value={query}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     onFocus={() => setShowSuggestions(true)}
+                    className="w-full py-2 pl-4 pr-12 rounded-lg border border-primary-400 focus:outline-none focus:border-primary-500 transition-all ease-in"
                 />
-                {/* <button
+                <button
                     type="submit"
-                    className="bg-primary-500 flex items-center gap-2 text-white py-[11px] px-4 outline-none rounded rounded-l-none hidden md:block"
+                    className="absolute right-2 top-1 text-white p-2 bg-primary-400 hover:bg-primary-500 rounded-full"
                 >
-                    <h1>Search</h1>
-                </button> */}
-                {query && (
-                    <button
-                        type="button"
-                        onClick={handleClearInput}
-                        className="absolute right-2 top-2 md:hidden"
-                    >
-                        {/* <FaTimes /> */}
-                    </button>
-                )}
+                    <FaSearch />
+                </button>
             </form>
 
             {showSuggestions && query && (
                 <div className="absolute top-full mt-1 w-full bg-white border rounded shadow-lg z-10">
                     {isFetching ? (
-                        <p className="p-2 text-gray-500">
-                            <div className="flex items-center justify-center p-5 bg-transparent min-w-screen">
-                                <div className="flex space-x-2 animate-pulse">
-                                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                                    <div className="w-2 h-2 bg-primary-400  rounded-full"></div>
-                                </div>
+                        <div className="flex items-center justify-center p-5 bg-transparent min-w-screen">
+                            <div className="flex space-x-2 animate-pulse">
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
                             </div>
-                        </p>
+                        </div>
                     ) : suggestions?.totalResults > 0 ? (
                         <ul className="list-none p-0 m-0">
                             {suggestions?.results?.map((product, index) => (
@@ -143,14 +133,11 @@ const SearchBar = () => {
                                         handleSuggestionClick(product)
                                     }
                                 >
-                                    {/* Product Details */}
                                     <div className="flex-1">
                                         <span className="block font-medium text-base text-gray-900">
                                             {product.name}
                                         </span>
                                     </div>
-                                    {/* Icon */}
-                                    <HiSearch className="text-gray-400" />
                                 </li>
                             ))}
                         </ul>

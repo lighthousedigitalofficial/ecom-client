@@ -94,7 +94,7 @@ body {
     }
 
     .btn {
-        @apply py-2 px-4 text-sm cursor-pointer shadow-sm rounded-sm focus:outline-none transition-all duration-300 ease-out lg:px-6 md:text-base lg:text-lg;
+        @apply py-2 px-4 text-sm cursor-pointer shadow-sm rounded-md focus:outline-none transition-all duration-300 ease-out lg:px-6 md:text-base lg:text-lg;
     }
 
     .primary-btn {

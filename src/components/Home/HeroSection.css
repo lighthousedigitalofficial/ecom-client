@@ -2,7 +2,8 @@
     .biz-banner {
         padding-top: 2.2rem;
         width: 100%;
-        height: 80vh !important;
+        height: 90vh !important;
+        object-fit: contain;
         -webkit-box-sizing: content-box;
         box-sizing: content-box;
         background-repeat: no-repeat;
@@ -113,15 +114,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    
 }
 
 @media only screen and (min-width: 1280px) {
-    
 }
 
 @media only screen and (min-width: 1366px) {
-    
 }
 
 @media only screen and (min-width: 1024px) {
@@ -443,8 +441,6 @@ button {
 
 /* Larger screens (1024px and up) */
 @media only screen and (min-width: 1024px) {
-    
-
     .biz-banner h2 {
         font-size: 40px;
     }
@@ -468,8 +464,6 @@ button {
         height: 620px;
     }
 
-    
-
     .biz-banner h2 {
         font-size: 44px;
     }
@@ -488,8 +482,6 @@ button {
         height: 680px;
     }
 
-    
-
     .biz-banner h2 {
         font-size: 48px;
     }
@@ -507,8 +499,6 @@ button {
     .biz-banner {
         height: 700px;
     }
-
-    
 
     .biz-banner h2 {
         font-size: 50px;

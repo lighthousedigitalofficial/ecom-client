@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { FaTimes } from 'react-icons/fa'
+// import { FaTimes } from 'react-icons/fa'
 import { HiSearch } from 'react-icons/hi'
 import useFetchProducts from './../../hooks/useFetchProducts'
 
@@ -22,10 +22,10 @@ const MainSearch = () => {
         setShowSuggestions(inputValue.trim().length > 0)
     }
 
-    const handleClearInput = () => {
-        setQuery('')
-        setShowSuggestions(false)
-    }
+    // const handleClearInput = () => {
+    //     setQuery('')
+    //     setShowSuggestions(false)
+    // }
 
     const handleSearch = (e) => {
         e.preventDefault()
@@ -88,48 +88,120 @@ const MainSearch = () => {
     }, [query])
 
     return (
+        // <div ref={searchBarRef} className="relative mx-1 w-full">
+        //     <form onSubmit={handleSearch} className="flex items-center">
+        //         <input
+        //             className="w-full h-12 p-3 flex items-center bg-white bg-opacity-90 rounded-md shadow-lg border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
+        //             type="search"
+        //             autoComplete="off"
+        //             placeholder="Search for items..."
+        //             value={query}
+        //             onChange={handleInputChange}
+        //             onKeyDown={handleKeyDown}
+        //             onFocus={() => setShowSuggestions(true)}
+        //         />
+        //         <button
+        //             type="submit"
+        //             className="h-12 bg-primary-500 text-lg text-white px-6 rounded-r-full shadow-lg outline-none transition-all ease-in"
+        //         >
+        //             Search
+        //         </button>
+        //         {query && (
+        //             <button
+        //                 type="button"
+        //                 onClick={handleClearInput}
+        //                 className="absolute right-2 top-2 md:hidden"
+        //             >
+        //                 <FaTimes />
+        //             </button>
+        //         )}
+        //     </form>
+
+        //     {showSuggestions && query && (
+        //         <div className="absolute top-full mt-1 w-full bg-white border rounded shadow-lg z-10">
+        //             {isFetching ? (
+        //                 <p className="p-2 text-gray-500">
+        //                     <div className="flex items-center justify-center p-5 bg-transparent min-w-screen">
+        //                         <div className="flex space-x-2 animate-pulse">
+        //                             <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+        //                             <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+        //                             <div className="w-2 h-2 bg-primary-400  rounded-full"></div>
+        //                         </div>
+        //                     </div>
+        //                 </p>
+        //             ) : suggestions?.totalResults > 0 ? (
+        //                 <ul className="list-none p-0 m-0">
+        //                     {suggestions?.results?.map((product, index) => (
+        //                         <li
+        //                             key={product._id}
+        //                             className={`flex items-center p-2 gap-2 border-l-4 cursor-pointer transition-all ease-in ${
+        //                                 activeSuggestionIndex === index
+        //                                     ? 'bg-gray-100 border-primary-500'
+        //                                     : 'hover:bg-gray-50 border-transparent'
+        //                             }`}
+        //                             onClick={() =>
+        //                                 handleSuggestionClick(product)
+        //                             }
+        //                         >
+        //                             {/* Product Details */}
+        //                             <div className="flex-1">
+        //                                 <span className="block font-medium text-base text-gray-900">
+        //                                     {product.name}
+        //                                 </span>
+        //                             </div>
+        //                             {/* Icon */}
+        //                             <HiSearch className="text-gray-400" />
+        //                         </li>
+        //                     ))}
+        //                 </ul>
+        //             ) : (
+        //                 <span className="block p-2 font-medium text-base text-gray-900">
+        //                     Product not found
+        //                 </span>
+        //             )}
+        //         </div>
+        //     )}
+        // </div>
         <div ref={searchBarRef} className="relative mx-1 w-full">
-        <form onSubmit={handleSearch} className="flex items-center">
-    <input
-        className="w-full h-12 p-3 flex items-center bg-white bg-opacity-90 rounded-l-full shadow-lg border outline-none focus:border-primary-400 text-gray-900 transition-all ease-in"
-        type="search"
-        autoComplete="off"
-        placeholder="Search for items..."
-        value={query}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        onFocus={() => setShowSuggestions(true)}
-    />
-    <button
-        type="submit"
-        className="h-12 bg-primary-500 text-lg text-white px-6 rounded-r-full shadow-lg outline-none transition-all ease-in"
-    >
-        Search
-    </button>
-    {query && (
-        <button
-            type="button"
-            onClick={handleClearInput}
-            className="absolute right-2 top-2 md:hidden"
-        >
-            <FaTimes />
-        </button>
-    )}
-</form>
+            <form
+                onSubmit={handleSearch}
+                className="flex items-center relative"
+            >
+                {/* Input Field */}
+                <input
+                    className="w-full h-12 pl-4 pr-36 bg-white bg-opacity-90 rounded-lg shadow-lg outline-none  text-gray-900 transition-all ease-in text-sm md:text-base"
+                    type="search"
+                    autoComplete="off"
+                    placeholder="Search for items..."
+                    value={query}
+                    onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
+                    onFocus={() => setShowSuggestions(true)}
+                />
 
+                {/* Search Button */}
+                <button
+                    type="submit"
+                    className="flex items-center gap-2 h-12 bg-primary-500 text-white px-6 rounded-r-md shadow-md hover:bg-primary-600 transition-all ease-in-out absolute right-0 top-0"
+                >
+                    <HiSearch className="text-lg" />
+                    <span className="text-sm md:text-base font-medium">
+                        Search
+                    </span>
+                </button>
+            </form>
 
+            {/* Suggestions Dropdown */}
             {showSuggestions && query && (
                 <div className="absolute top-full mt-1 w-full bg-white border rounded shadow-lg z-10">
                     {isFetching ? (
-                        <p className="p-2 text-gray-500">
-                            <div className="flex items-center justify-center p-5 bg-transparent min-w-screen">
-                                <div className="flex space-x-2 animate-pulse">
-                                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                                    <div className="w-2 h-2 bg-primary-400  rounded-full"></div>
-                                </div>
+                        <div className="flex items-center justify-center p-5 bg-transparent">
+                            <div className="flex space-x-2 animate-pulse">
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
                             </div>
-                        </p>
+                        </div>
                     ) : suggestions?.totalResults > 0 ? (
                         <ul className="list-none p-0 m-0">
                             {suggestions?.results?.map((product, index) => (
@@ -144,13 +216,11 @@ const MainSearch = () => {
                                         handleSuggestionClick(product)
                                     }
                                 >
-                                    {/* Product Details */}
                                     <div className="flex-1">
-                                        <span className="block font-medium text-base text-gray-900">
+                                        <span className="block font-medium text-sm md:text-base text-gray-900">
                                             {product.name}
                                         </span>
                                     </div>
-                                    {/* Icon */}
                                     <HiSearch className="text-gray-400" />
                                 </li>
                             ))}

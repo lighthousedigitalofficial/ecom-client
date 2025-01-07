@@ -35,6 +35,7 @@ import AppPromotion from '../../components/Banners/AppPromotion'
 import JoinFree from '../../components/JoinForFree'
 // import HeroTabData from '../../components/Home/HeroTabData'
 import ProductsCarousel from '../../components/Banners/ProductsBanner'
+import SecureFlow from '../../components/SecureFlow/SecureFlow'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -59,6 +60,7 @@ const HomePage = () => {
                         <Regions />
                         <Categories />
                     </section>
+
                     <section className="py-2 mb-4">
                         <ProductRecommendations />
                     </section>
@@ -69,6 +71,9 @@ const HomePage = () => {
                 </section> */}
                     <section className="py-4 mb-4">
                         <FeatureProducts />
+                    </section>
+                    <section className="py-4 mb-4">
+                        <SecureFlow />
                     </section>
                     <section className="py-4 mb-4">
                         <img

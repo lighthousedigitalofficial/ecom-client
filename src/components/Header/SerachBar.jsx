@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { FaSearch, FaTimes } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
 import useFetchProducts from './../../hooks/useFetchProducts'
 
 const SearchBar = () => {
@@ -21,10 +21,10 @@ const SearchBar = () => {
         setShowSuggestions(inputValue.trim().length > 0)
     }
 
-    const handleClearInput = () => {
-        setQuery('')
-        setShowSuggestions(false)
-    }
+    // const handleClearInput = () => {
+    //     setQuery('')
+    //     setShowSuggestions(false)
+    // }
 
     const handleSearch = (e) => {
         e.preventDefault()
@@ -36,8 +36,9 @@ const SearchBar = () => {
     }
 
     const handleSuggestionClick = (suggestion) => {
+        console.log({ suggestion })
         if (query) {
-            navigate(`/search?query=${encodeURIComponent(query)}`)
+            navigate(`/search?query=${encodeURIComponent(suggestion.name)}`)
             setShowSuggestions(false) // Hide suggestions after navigation
         } else {
             console.error('Invalid suggestion format', suggestion)

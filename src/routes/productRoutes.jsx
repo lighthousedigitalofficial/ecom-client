@@ -44,7 +44,7 @@ const productRoutes = [
         element: <CategoryProductsPage />,
     },
     {
-        path: 'products/sub-category/:slug',
+        path: 'products/category/:category/:subCategory',
         element: <SubCategoryProductsPage />,
     },
     {

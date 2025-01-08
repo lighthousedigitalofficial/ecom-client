@@ -100,7 +100,7 @@ const CategoryDropDown = () => {
                                                             }
                                                         >
                                                             <Link
-                                                                to={`/products/sub-category/${subCategory.slug}`}
+                                                                to={`/products/category/${category.slug}/${subCategory.slug}`}
                                                                 className="flex justify-between p-2 border-b-2 border-gray-100 last:border-none hover:bg-gray-100"
                                                             >
                                                                 <span className="px-5 text-sm">

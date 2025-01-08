@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link, useSearchParams } from 'react-router-dom'
 import { useSearchProductsQuery } from '../../redux/slices/productsApiSlice'
 import Loader from '../../components/Loader'
@@ -9,12 +10,8 @@ const SearchResultPage = () => {
     const [searchParams] = useSearchParams()
     const query = searchParams.get('query') || ''
 
-    console.log(query)
-
     // API query with caching and deduplication
     const { data, isLoading } = useSearchProductsQuery({ query })
-
-    console.log(data)
 
     return (
         <div className="mx-auto p-4">
@@ -82,12 +79,3 @@ const SearchResultPage = () => {
 }
 
 export default React.memo(SearchResultPage)
-
-//  <div className="py-2">
-//                         <h1 className="text-xl font-bold">Search Results</h1>
-//                         <h1 className="text-base text-gray-600 mb-4">
-//                             {totalProducts > 0
-//                                 ? `${totalProducts} items found for "${query}"`
-//                                 : 'No products found'}
-//                         </h1>
-//                     </div>

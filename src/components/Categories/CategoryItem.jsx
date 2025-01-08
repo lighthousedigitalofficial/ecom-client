@@ -11,7 +11,7 @@ const CategoryItem = ({ category }) => {
 
     return (
         <Link
-            to={`/products/category/${category.slug}`}
+            to={`/products/category/${category.mainCategory.slug}/${category.slug}`}
             className="flex flex-col justify-center items-center gap-2 p-2 group cursor-pointer mt-6"
         >
             <div

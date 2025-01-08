@@ -12,7 +12,10 @@ const CategoryCard = ({ category }) => {
     return (
         <div className="bg-white flex flex-col items-center gap-2 p-2 w-40 h-40 shadow-sm rounded-md">
             <div className="border border-gray-100 h-20 w-20 rounded-full group cursor-pointer">
-                <Link to={`/products/category/${category.slug}`} className="">
+                <Link
+                    to={`/products/category/${category.mainCategory.slug}/${category.slug}`}
+                    className=""
+                >
                     <img
                         src={categoryLogo}
                         alt={category.name}
@@ -22,7 +25,7 @@ const CategoryCard = ({ category }) => {
                 </Link>
             </div>
             <Link
-                to={`/products/category/${category.slug}`}
+                to={`/products/category/${category.mainCategory.slug}/${category.slug}`}
                 className="text-sm text-center"
             >
                 {category.name}

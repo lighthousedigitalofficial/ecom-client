@@ -8,9 +8,10 @@ import img from '../../../assets/no-product-found.png'
 import { useGetProductsQuery } from '../../../redux/slices/productsApiSlice'
 import { useState } from 'react'
 import { TablePagination } from '@mui/material'
+import keys from '../../../config/keys'
 
 export const SubCategoryProductsPage = () => {
-    const { slug } = useParams()
+    const { subCategory: slug, category } = useParams()
 
     const [searchParams, setSearchParams] = useSearchParams()
     const [currentPage, setCurrentPage] = useState(
@@ -66,8 +67,18 @@ export const SubCategoryProductsPage = () => {
         <>
             <div className="mt-4 w-[95vw] mx-auto py-4">
                 <div className="bg-primary-50 p-6 rounded-lg shadow-sm">
+                    <img
+                        src={
+                            subCategory?.logo
+                                ? subCategory.logo.startsWith('subcategory')
+                                    ? `${keys.BUCKET_URL}${subCategory.logo}`
+                                    : subCategory.logo
+                                : keys.DEFAULT_IMG
+                        }
+                        alt={subCategory.name}
+                    />
                     <h1 className="text-2xl font-bold text-gray-800 mb-2">
-                        Sub Category Products (
+                        {capitalizeFirstLetter(category)} (
                         {capitalizeFirstLetter(subCategory?.doc?.name)})
                     </h1>
                     <h1 className="text-lg text-gray-600">

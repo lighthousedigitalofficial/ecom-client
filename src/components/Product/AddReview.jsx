@@ -47,7 +47,7 @@ const AddReview = ({ productId, refetch }) => {
         <FormProvider {...methods}>
             <form
                 onSubmit={methods.handleSubmit(onSubmit)}
-                className="space-y-4 border rounded-lg p-4"
+                className="space-y-4 border bg-white rounded-lg p-4"
             >
                 <div>
                     <label className="input-label">Rate this Product</label>
@@ -65,7 +65,7 @@ const AddReview = ({ productId, refetch }) => {
                                     field.onChange(newValue) // Update react-hook-form value
                                 }}
                                 onBlur={field.onBlur} // Call onBlur to trigger validation
-                                className="mt-1" // Margin for spacing
+                                className="mt-1 " // Margin for spacing
                             />
                         )}
                     />
@@ -81,7 +81,7 @@ const AddReview = ({ productId, refetch }) => {
                         {...methods.register('comment', {
                             required: 'Comment is required',
                         })} // Add validation
-                        className="input"
+                        className="input bg-gray-50"
                         rows="4"
                     />
                     {methods.formState.errors.comment && (

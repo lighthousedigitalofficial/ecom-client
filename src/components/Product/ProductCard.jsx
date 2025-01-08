@@ -137,7 +137,7 @@ const ProductCard = ({ data: product }) => {
                         <img
                             src={productThumbnail}
                             alt={product.name}
-                            className="h-full w-full object-cover hover:scale-105 transition-transform delay-100"
+                            className="h-full w-full object-cover object-top hover:scale-105 transition-transform delay-100"
                             loading="lazy"
                         />
                     </Link>

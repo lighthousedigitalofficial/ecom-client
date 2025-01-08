@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-/* eslint-disable react/prop-types */
 const RegionCard = ({ name, bgColor, icon: Icon, slug }) => {
   return (
     <Link

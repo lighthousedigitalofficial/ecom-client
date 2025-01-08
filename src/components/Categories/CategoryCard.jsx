@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import keys from '../../config/keys'
 
 const CategoryCard = ({ category }) => {
-    const categoryLogo = category?.logo?.startsWith('category')
+    const categoryLogo = category?.logo?.startsWith('subcategory')
         ? `${keys.BUCKET_URL}${category.logo}`
         : category?.logo
         ? category?.logo

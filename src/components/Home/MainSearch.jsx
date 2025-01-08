@@ -38,7 +38,7 @@ const MainSearch = () => {
 
     const handleSuggestionClick = (suggestion) => {
         if (query) {
-            navigate(`/search?query=${encodeURIComponent(query)}`)
+            navigate(`/search?query=${encodeURIComponent(suggestion.name)}`)
             setShowSuggestions(false) // Hide suggestions after navigation
         } else {
             console.error('Invalid suggestion format', suggestion)

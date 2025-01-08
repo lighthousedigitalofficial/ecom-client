@@ -1,11 +1,11 @@
 import CategoryCard from '../../../components/Categories/CategoryCard'
 import Loader from '../../../components/Loader'
-import { useGetCategoriesQuery } from '../../../redux/slices/categoriesApiSlice'
+import { useGetSubCategoriesQuery } from '../../../redux/slices/categoriesApiSlice'
 import { useState } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi' // Import the search icon
 
 const CategoriesPage = () => {
-    const { data: categories, isLoading } = useGetCategoriesQuery({})
+    const { data: categories, isLoading } = useGetSubCategoriesQuery({})
     const [searchTerm, setSearchTerm] = useState('')
 
     // Filter brands based on the search term

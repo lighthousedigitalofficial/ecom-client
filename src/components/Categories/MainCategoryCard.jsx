@@ -1,10 +1,16 @@
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
 
-// eslint-disable-next-line react/prop-types
-const MainCategoryCard = ({ slug, bgColor, categoryName, icon: Icon }) => {
+const MainCategoryCard = ({
+    slug,
+    bgColor,
+    categoryName,
+    icon: Icon,
+    region,
+}) => {
     return (
         <Link
-            to={`/products/category/${slug}`}
+            to={`/products/category/${slug}?region=${region}`}
             className={`group flex items-center justify-center rounded-full shadow-sm p-4 hover:shadow-md ease-in delay-100 transition-transform transform`}
             style={{
                 backgroundColor: bgColor,

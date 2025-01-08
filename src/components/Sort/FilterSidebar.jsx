@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { MdArrowForwardIos } from 'react-icons/md'
-import { FaSearch } from 'react-icons/fa'
+import { FaChevronDown, FaChevronUp, FaSearch } from 'react-icons/fa'
 import { useGetBrandsQuery } from '../../redux/slices/brandsApiSlice'
 import { useGetCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
 import { Link, useSearchParams } from 'react-router-dom'
@@ -14,6 +14,8 @@ const FilterSidebar = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [searchItem, setSearchItem] = useState('')
     const [filterBrands, setFilterBrands] = useState([])
+
+    const [isOpen, setIsOpen] = useState({}) // State for toggle tracking
 
     // State for min and max price
     const [minPrice, setMinPrice] = useState(0)
@@ -169,26 +171,83 @@ const FilterSidebar = () => {
                         <h3 className="text-lg font-semibold my-2">
                             Categories
                         </h3>
-                        <ul className="mt-4 space-y-2 max-h-[250px] overflow-y-auto scrollbar-thin">
+                        <ul className="mt-4 space-y-2 max-h-[800px] overflow-y-auto scrollbar-thin">
                             {categories?.doc?.map((category) => {
-                                if (category?.totalProducts > 0)
-                                    return (
-                                        <li
-                                            key={category._id}
-                                            className="border-b border-gray-200 last:border-none p-2"
+                                const toggleSubCategories = (id) => {
+                                    setIsOpen((prevState) => ({
+                                        ...prevState,
+                                        [id]: !prevState[id],
+                                    }))
+                                }
+
+                                return (
+                                    <li
+                                        key={category._id}
+                                        className="border-b border-gray-200 last:border-none p-2"
+                                    >
+                                        {/* Main category link */}
+                                        <div
+                                            onClick={() =>
+                                                toggleSubCategories(
+                                                    category._id
+                                                )
+                                            }
+                                            className="flex justify-between items-center px-2 hover:text-primary-600 hover:bg-blue-gray-50 py-2 cursor-pointer"
                                         >
-                                            <Link
-                                                to={`/products/category/${category.slug}`}
-                                                className="flex justify-between items-center px-2 hover:text-primary-600 "
-                                            >
-                                                <span className=" font-thin text-sm">
-                                                    {capitalizeFirstLetter(
-                                                        category.name
+                                            <span className="font-thin text-sm">
+                                                {capitalizeFirstLetter(
+                                                    category.name
+                                                )}
+                                            </span>
+                                            {category.subCategories?.length >
+                                                0 && (
+                                                <span className="ml-2 text-gray-500">
+                                                    {isOpen[category._id] ? (
+                                                        <FaChevronUp
+                                                            size={12}
+                                                        />
+                                                    ) : (
+                                                        <FaChevronDown
+                                                            size={12}
+                                                        />
                                                     )}
                                                 </span>
-                                            </Link>
-                                        </li>
-                                    )
+                                            )}
+                                        </div>
+
+                                        {/* Subcategories dropdown */}
+                                        {isOpen[category._id] &&
+                                            category.subCategories?.length >
+                                                0 && (
+                                                <ul className="ml-4 mt-2 space-y-1">
+                                                    {category.subCategories.map(
+                                                        (subCategory) => (
+                                                            <li
+                                                                key={
+                                                                    subCategory._id
+                                                                }
+                                                                className="border-b
+                                                                border-gray-200
+                                                                last:border-none
+                                                                "
+                                                            >
+                                                                <Link
+                                                                    to={`/products/category/${category.slug}/${subCategory.slug}`}
+                                                                    className="flex justify-between items-center p-2 hover:text-primary-600 hover:bg-blue-gray-50 text-sm"
+                                                                >
+                                                                    <span className="font-thin">
+                                                                        {capitalizeFirstLetter(
+                                                                            subCategory.name
+                                                                        )}
+                                                                    </span>
+                                                                </Link>
+                                                            </li>
+                                                        )
+                                                    )}
+                                                </ul>
+                                            )}
+                                    </li>
+                                )
                             })}
                         </ul>
                     </>

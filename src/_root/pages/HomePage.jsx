@@ -36,6 +36,7 @@ import JoinFree from '../../components/JoinForFree'
 // import HeroTabData from '../../components/Home/HeroTabData'
 import ProductsCarousel from '../../components/Banners/ProductsBanner'
 import SecureFlow from '../../components/SecureFlow/SecureFlow'
+import StatsData from './../../components/Categories/Data'
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -58,6 +59,21 @@ const HomePage = () => {
                 <div className="w-[95vw] px-2 mx-auto">
                     <section>
                         <Regions />
+                        <div className="catalog-info bg-white shadow-sm p-4">
+                            <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
+                                {/* Title Section */}
+                                <h2 className="catalog-title text-2xl md:text-4xl font-bold p-6 text-primary-600 max-w-3xl text-center md:text-left">
+                                    Strengthening Pakistan’s Trade Sector —
+                                    Unlock Limitless Opportunities for Global
+                                    Commerce{' '}
+                                </h2>
+
+                                {/* Stats Section */}
+                                <div className="catalog-data flex flex-wrap justify-center md:justify-between gap-5 mt-6 md:mt-0">
+                                    <StatsData />
+                                </div>
+                            </div>
+                        </div>
                         <Categories />
                     </section>
 

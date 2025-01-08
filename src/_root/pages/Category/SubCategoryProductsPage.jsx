@@ -66,25 +66,61 @@ export const SubCategoryProductsPage = () => {
     ) : subCategory && subCategory?.doc ? (
         <>
             <div className="mt-4 w-[95vw] mx-auto py-4">
-                <div className="bg-primary-50 p-6 rounded-lg shadow-sm">
+                {/* <div className="bg-primary-50 p-6 flex items-center gap-2 rounded-lg shadow-sm">
                     <img
                         src={
-                            subCategory?.logo
-                                ? subCategory.logo.startsWith('subcategory')
-                                    ? `${keys.BUCKET_URL}${subCategory.logo}`
-                                    : subCategory.logo
+                            subCategory?.doc?.logo
+                                ? subCategory?.doc?.logo.startsWith(
+                                      'subcategory'
+                                  )
+                                    ? `${keys.BUCKET_URL}${subCategory?.doc?.logo}`
+                                    : subCategory?.doc?.logo
                                 : keys.DEFAULT_IMG
                         }
                         alt={subCategory.name}
+                        className="lg:w-20 lg:h-20 md:w-16 md:h-16 h-10 w-10 object-cover rounded-full"
                     />
-                    <h1 className="text-2xl font-bold text-gray-800 mb-2">
-                        {capitalizeFirstLetter(category)} (
-                        {capitalizeFirstLetter(subCategory?.doc?.name)})
-                    </h1>
-                    <h1 className="text-lg text-gray-600">
-                        {totalProducts} Items found
-                    </h1>
+                    <div>
+                        <h1 className="text-2xl font-bold text-gray-800 mb-2">
+                            {capitalizeFirstLetter(category)} (
+                            {capitalizeFirstLetter(subCategory?.doc?.name)})
+                        </h1>
+                        <p className="text-lg text-gray-600">
+                            {totalProducts} Items found
+                        </p>
+                    </div>
+                </div> */}
+                <div className="bg-primary-500 text-gray-100 p-6 flex items-center gap-4 rounded-lg shadow-sm flex-wrap lg:flex-nowrap">
+                    {/* Logo Section */}
+                    <img
+                        src={
+                            subCategory?.doc?.logo
+                                ? subCategory?.doc?.logo.startsWith(
+                                      'subcategory'
+                                  )
+                                    ? `${keys.BUCKET_URL}${subCategory?.doc?.logo}`
+                                    : subCategory?.doc?.logo
+                                : keys.DEFAULT_IMG
+                        }
+                        alt={subCategory?.doc?.name || 'Default'}
+                        className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 bg-white object-cover rounded-full"
+                    />
+
+                    {/* Text Section */}
+                    <div className="flex-1">
+                        <h1 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">
+                            {capitalizeFirstLetter(category)} (
+                            {capitalizeFirstLetter(
+                                subCategory?.doc?.name || ''
+                            )}
+                            )
+                        </h1>
+                        <p className="text-sm md:text-base  lg:text-lg">
+                            {totalProducts} Items found
+                        </p>
+                    </div>
                 </div>
+
                 <div className="flex justify-between items-start gap-4 my-4">
                     <FilterSidebar filters={filters} />
                     {productsFetching ? (

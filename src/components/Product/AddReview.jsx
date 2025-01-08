@@ -50,7 +50,7 @@ const AddReview = ({ productId, refetch }) => {
                 className="space-y-4 border bg-white rounded-lg p-4"
             >
                 <div>
-                    <label className="input-label">Rate this Product</label>
+                    <label className="input-label text-xl text-gray-900 font-bold">Rate this Product</label>
                     <Controller
                         name="rating"
                         control={methods.control}

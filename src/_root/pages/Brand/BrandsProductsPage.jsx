@@ -9,6 +9,7 @@ import img from '../../../assets/no-product-found.png'
 import { useGetProductsQuery } from '../../../redux/slices/productsApiSlice'
 import { TablePagination } from '@mui/material'
 import { useState } from 'react'
+import keys from '../../../config/keys'
 
 export const BrandsProductsPage = () => {
     const { slug } = useParams()
@@ -66,14 +67,27 @@ export const BrandsProductsPage = () => {
     ) : brand && brand?.doc ? (
         <>
             <div className="mt-4 w-[95vw] mx-auto py-4">
-                <div className="bg-primary-50 p-6 rounded-lg shadow-sm">
-                    <h1 className="text-2xl font-bold text-gray-800 mb-2">
-                        Brand Products (
-                        {capitalizeFirstLetter(brand?.doc?.name)})
-                    </h1>
-                    <h1 className="text-lg text-gray-600">
-                        {data.totalDocs} items found
-                    </h1>
+                <div className="bg-primary-500 text-gray-100 p-6 flex items-center gap-4 rounded-lg shadow-sm flex-wrap lg:flex-nowrap">
+                    {/* Logo Section */}
+                    <img
+                        src={
+                            brand?.doc?.logo
+                                ? brand?.doc?.logo.startsWith('brand')
+                                    ? `${keys.BUCKET_URL}${brand?.doc?.logo}`
+                                    : brand?.doc?.logo
+                                : keys.DEFAULT_IMG
+                        }
+                        alt={brand?.doc?.name || 'Default'}
+                        className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 bg-white object-cover rounded-full"
+                    />
+
+                    <div>
+                        <h3 className="text-2xl font-bold mb-2">
+                            Brand Products (
+                            {capitalizeFirstLetter(brand?.doc?.name)})
+                        </h3>
+                        <p className="text-lg ">{data.totalDocs} items found</p>
+                    </div>
                 </div>
                 <div className="flex justify-between items-start gap-4 my-4">
                     <FilterSidebar filters={filters} />

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { capitalizeFirstLetter } from '../../utils'
 import { SlArrowRight } from 'react-icons/sl'
+import { FaChevronRight } from 'react-icons/fa'
 
 const CategoryDropDown = () => {
     const { data: categories, isLoading } = useGetCategoriesQuery({})
@@ -34,17 +35,10 @@ const CategoryDropDown = () => {
                     {categories.doc.slice(0, 7).map((category, index) => {
                         const hasSubCategories =
                             category.subCategories?.length > 0
-
-                        // const categoryLogo = category?.logo
-                        //     ? category.logo.startsWith('category')
-                        //         ? `${keys.BUCKET_URL}${category.logo}`
-                        //         : category.logo
-                        //     : keys.DEFAULT_IMG
-
                         return (
                             <div
                                 key={index}
-                                className="relative group border-b-2 border-gray-100"
+                                className="relative group border-b-2 border-gray-100 last:border-none"
                                 onMouseEnter={() =>
                                     handleMouseEnterCategory(category._id)
                                 }
@@ -66,7 +60,6 @@ const CategoryDropDown = () => {
                                         {capitalizeFirstLetter(category.name)}
                                         {hasSubCategories && (
                                             <span className="ml-auto text-sm">
-                                                {' '}
                                                 <SlArrowRight size={9} />
                                             </span>
                                         )}
@@ -76,7 +69,7 @@ const CategoryDropDown = () => {
                                 {hoveredCategory === category._id &&
                                     hasSubCategories && (
                                         <div
-                                            className="absolute top-0 left-full w-56 bg-white shadow-md z-20 ml-1 p-1"
+                                            className="absolute top-0 left-full w-56 bg-white  shadow-md z-20 ml-1 p-1"
                                             onMouseEnter={() =>
                                                 handleMouseEnterCategory(
                                                     category._id
@@ -107,8 +100,8 @@ const CategoryDropDown = () => {
                                                             }
                                                         >
                                                             <Link
-                                                                to={`/products?subCategory=${subCategory._id}`}
-                                                                className="flex justify-between p-2 hover:bg-gray-100"
+                                                                to={`/products/sub-category/${subCategory.slug}`}
+                                                                className="flex justify-between p-2 border-b-2 border-gray-100 last:border-none hover:bg-gray-100"
                                                             >
                                                                 <span className="px-5 text-sm">
                                                                     {capitalizeFirstLetter(
@@ -117,7 +110,11 @@ const CategoryDropDown = () => {
                                                                 </span>
                                                                 {hasSubSubCategories && (
                                                                     <span className="ml-auto">
-                                                                        ▶
+                                                                        <FaChevronRight
+                                                                            size={
+                                                                                12
+                                                                            }
+                                                                        />
                                                                     </span>
                                                                 )}
                                                             </Link>
@@ -125,7 +122,7 @@ const CategoryDropDown = () => {
                                                             {hoveredSubCategory ===
                                                                 subCategory._id &&
                                                                 hasSubSubCategories && (
-                                                                    <div className="absolute top-0 left-full w-56 bg-white shadow-md ml-1 z-20 p-2 text-sm">
+                                                                    <div className="absolute top-0 left-full max-w-96 bg-white shadow-md ml-1 z-20 p-2 text-sm">
                                                                         {subCategory.subSubCategories.map(
                                                                             (
                                                                                 subSubCategory,
@@ -155,15 +152,6 @@ const CategoryDropDown = () => {
                             </div>
                         )
                     })}
-
-                    <Link
-                        to={`/categories`}
-                        className="group text-center cursor-pointer w-full flex justify-center mt-2"
-                    >
-                        <span className="text-primary-500  hover:text-primary-600 ">
-                            View More
-                        </span>
-                    </Link>
                 </div>
             ) : (
                 <p>No categories found!</p>

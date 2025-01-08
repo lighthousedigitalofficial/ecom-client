@@ -68,7 +68,7 @@ export const RegionProducts = () => {
                 title={`${getRegionLabel(region)} Products`}
                 totalItems={data?.totalDocs}
             />
-            <RegionCategory />
+            <RegionCategory region={region} />
             <div className="flex justify-between items-start gap-4 my-4 ">
                 <FilterSidebar filters={filters} />
                 {data?.doc?.length ? (

@@ -8,6 +8,7 @@ import FeaturedProductsPage from '../_root/pages/Products/FeaturedProductsPage'
 import TopRatedProdcutsPage from '../_root/pages/Products/TopRatedProdcutsPage'
 import ProductsPage from '../_root/pages/Products/ProductsPage'
 import RegionProducts from '../_root/pages/Products/RegionProducts'
+import SubCategoryProductsPage from '../_root/pages/Category/SubCategoryProductsPage'
 
 const productRoutes = [
     {
@@ -41,6 +42,10 @@ const productRoutes = [
     {
         path: 'products/category/:slug',
         element: <CategoryProductsPage />,
+    },
+    {
+        path: 'products/sub-category/:slug',
+        element: <SubCategoryProductsPage />,
     },
     {
         path: 'products/brand/:slug',

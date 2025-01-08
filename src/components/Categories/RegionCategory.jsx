@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
     FaSeedling,
     FaIndustry,
@@ -10,7 +11,7 @@ import MainCategoryCard from './MainCategoryCard'
 import { useGetCategoriesQuery } from '../../redux/slices/categoriesApiSlice'
 import Loader from '../Loader'
 
-const RegionCategory = () => {
+const RegionCategory = ({ region }) => {
     const { data, isLoading } = useGetCategoriesQuery()
 
     // Define a static mapping for colors and icons
@@ -32,9 +33,8 @@ const RegionCategory = () => {
                 name: category.name,
                 color: staticCategoryData[category.name].color,
                 icon: staticCategoryData[category.name].icon,
+                region,
             })) || []
-
-    console.log(categories)
 
     return isLoading ? (
         <Loader />
@@ -47,6 +47,7 @@ const RegionCategory = () => {
                     bgColor={category.color}
                     categoryName={category.name}
                     icon={category.icon}
+                    region={category.region}
                 />
             ))}
         </div>

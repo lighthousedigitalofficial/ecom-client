@@ -33,12 +33,12 @@ export const BrandsProductsPage = () => {
     const { data: brand, isLoading } = useGetBrandBySlugQuery(slug)
 
     const { data, isFetching: productsFetching } = useGetProductsQuery({
-        brand: brand?.doc?._id,
-        status: 'approved',
         ...filters,
-        page: currentPage + 1, // API expects 1-based indexing
+        brand: brand?.doc?._id,
+        page: currentPage + 1,
         limit: rowsPerPage,
     })
+
     const totalProducts = data?.totalDocs || 0
 
     // Handle page change

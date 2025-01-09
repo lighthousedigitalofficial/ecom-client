@@ -47,17 +47,17 @@ export const SubCategoryProductsPage = () => {
             ...filters,
             page: newPage + 1,
         })
-        window.scrollTo({ top: 0, behavior: 'smooth' }) // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     // Handle rows per page change
     const handleChangeRowsPerPage = (event) => {
         const newRowsPerPage = parseInt(event.target.value, 10)
         setRowsPerPage(newRowsPerPage)
-        setCurrentPage(0) // Reset to the first page
+        setCurrentPage(0)
         setSearchParams({
             ...filters,
-            page: 1, // Reset page to 1
+            page: 1,
         })
     }
 

@@ -141,7 +141,7 @@ const ProductSlider = ({ images }) => {
             <div
                 ref={containerRef}
                 onMouseMove={handleMouseMove}
-                className="relative rounded-md group w-[500px] md:h-[650px] h-[300px] overflow-hidden border border-gray-200 shadow-sm"
+                className="relative rounded-md group w-[500px] md:h-[640px] h-[300px] overflow-hidden border border-gray-200 shadow-sm"
             >
                 {/* Main Image */}
                 {featuredImage && (

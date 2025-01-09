@@ -2,6 +2,7 @@
 import axios from 'axios'
 import keys from '../config/keys'
 import { parsePhoneNumberFromString } from 'libphonenumber-js'
+import imageCompression from 'browser-image-compression'
 
 // Function to get the label from the value
 export const getRegionLabel = (value) => {
@@ -41,6 +42,28 @@ export const getUploadUrl = async (type, folder) => {
     } catch (error) {
         console.error('Error fetching upload URL: ', error)
         throw new Error('Failed to get upload URL')
+    }
+}
+
+// Function to compress and resize an image before uploading to S3
+export const optimizeImageAndUpload = async (uploadUrl, file) => {
+    try {
+        // Resize and compress the image
+        const options = {
+            maxSizeMB: 1, // Max size of the image in MB
+            maxWidthOrHeight: 800, // Resize the image to a max width or height of 800px
+            useWebWorker: true, // Use WebWorker for faster processing (optional)
+        }
+
+        // Compress the image
+        const compressedFile = await imageCompression(file, options)
+
+        // Upload the compressed image to S3
+        await uploadImageToS3(uploadUrl, compressedFile)
+        console.log('Image uploaded successfully')
+    } catch (error) {
+        console.error('Error optimizing and uploading image', error)
+        throw new Error('Failed to optimize and upload image')
     }
 }
 

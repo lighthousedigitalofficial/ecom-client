@@ -12,7 +12,7 @@ import { useVendorRegisterMutation } from '../../redux/slices/vendorsApiSlice'
 import {
     deleteUploadedImages,
     getUploadUrl,
-    uploadImageToS3,
+    // uploadImageToS3,
 } from './../../utils/helpers'
 import { useNavigate } from 'react-router-dom'
 
@@ -77,7 +77,8 @@ const MultiStepForm = ({ vendorSchema }) => {
 
     async function uploadImage(uploadConfig, file) {
         try {
-            await uploadImageToS3(uploadConfig.url, file)
+            // await uploadImageToS3(uploadConfig.url, file)
+            await optimizeImageAndUpload(uploadConfig.url, file)
             return uploadConfig.key // Return the key if successful
         } catch (error) {
             console.error(`Failed to upload ${file.name}:`, error)
